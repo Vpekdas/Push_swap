@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2023/11/24 15:44:25 by vopekdas         ###   ########.fr        #
+#    Updated: 2023/12/07 16:47:23 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,16 +19,7 @@ SOURCES =  src/ft_printf.c \
 			src/printf_utils.c \
 			src/putnbr_base_utils.c
 
-BONUS = src/ft_printf_bonus.c \
-			src/handle_flags_bonus.c \
-			src/handle_mandatory_bonus.c \
-			src/handle_mandatory2_bonus.c \
-			src/printf_utils_bonus.c \
-			src/putnbr_base_utils_bonus.c
-
 OBJECTS = $(SOURCES:.c=.o)
-
-BONUS_OBJECTS = $(BONUS:.c=.o)
 
 CC=cc
 
@@ -42,9 +33,6 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
-
-bonus: $(BONUS_OBJECTS)
-	ar rcs $(NAME) $(BONUS_OBJECTS)
 
 clean:
 	$(RM) $(OBJECTS) $(BONUS_OBJECTS)

@@ -6,13 +6,14 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2023/11/24 15:44:25 by vopekdas         ###   ########.fr        #
+#    Updated: 2023/12/07 16:48:29 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SOURCES =  instructions.c
+SOURCES =  instruction_sa.c \
+			instruction_sb.c \
 
 LIBFT_PATH = Libft
 
@@ -31,7 +32,7 @@ RM = rm -f
 all: libft ft_printf $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJECTS) -Llibft -lft -Lft_printf -lftprintf
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJECTS) -LLibft -lft -Lft_printf -lftprintf
 
 libft: 
 	$(MAKE) -C $(LIBFT_PATH)
@@ -41,12 +42,12 @@ ft_printf:
 
 clean:
 	$(RM) $(OBJECTS)
-	$(MAKE) $(LIBFT_PATH) clean
-	$(MAKE) $(FT_PRINTF_PATH_PATH) clean
+	cd $(LIBFT_PATH) && make clean
+	cd $(FT_PRINTF_PATH) && make clean
 
 fclean: clean
 	$(RM) $(NAME)
-	$(MAKE) $(LIBFT_PATH) fclean
-	$(MAKE) $(FT_PRINTF_PATH) fclean
+	cd $(LIBFT_PATH) && make fclean
+	cd $(FT_PRINTF_PATH) && make fclean
 
 re: fclean all

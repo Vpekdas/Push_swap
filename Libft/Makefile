@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2023/11/21 10:25:09 by vopekdas         ###   ########.fr        #
+#    Updated: 2023/12/07 13:27:43 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,21 +45,18 @@ SOURCES =  ft_isalpha.c \
 			ft_putchar_fd.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
-			ft_putnbr_fd.c
-
-BONUS = ft_lstnew.c \
-		ft_lstadd_front.c \
-		ft_lstsize.c \
-		ft_lstlast.c \
-		ft_lstadd_back.c \
-		ft_lstdelone.c \
-		ft_lstclear.c \
-		ft_lstiter.c \
-		ft_lstmap.c 
+			ft_putnbr_fd.c \
+			ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c 
 
 OBJECTS = $(SOURCES:.c=.o)
-
-BONUS_OBJECTS = $(BONUS:.c=.o)
 
 CC = cc
 
@@ -73,9 +70,6 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	ar r $(NAME) $(OBJECTS)
-
-bonus: $(BONUS_OBJECTS)
-	ar r $(NAME) $(BONUS_OBJECTS)
 
 clean:
 	$(RM) $(OBJECTS) $(BONUS_OBJECTS)
