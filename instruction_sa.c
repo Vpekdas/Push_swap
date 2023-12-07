@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:18:13 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/07 15:21:39 by vopekdas         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:00:27 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	ft_instruction_sa(t_list **list)
 	if (!list)
 		return ;
 	first = *list;
+	if (first->next == NULL)
+		return ;
 	second = first->next;
 	temp = first->content;
 	first->content = second->content;

@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   instruction_ss.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 15:18:19 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/07 16:58:19 by vopekdas         ###   ########.fr       */
+/*   Created: 2023/12/07 16:52:38 by vopekdas          #+#    #+#             */
+/*   Updated: 2023/12/07 16:54:43 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
+#include "push_swap.h"
 
-# define PUSH_SWAP_H
-
-# include "Libft/libft.h"
-# include "ft_printf/include/ft_printf.h"
-
-void	ft_instruction_sa(t_list **list);
-void	ft_instruction_sb(t_list **list);
-void	ft_instruction_ss(t_list **list, t_list **list2);
-
-#endif
+void	ft_instruction_ss(t_list **list, t_list **list2)
+{
+	if (!list || !list2)
+		return ;
+	ft_instruction_sa(list);
+	ft_instruction_sb(list2);
+	return ;
+}
