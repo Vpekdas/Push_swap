@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:25:45 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/07 15:12:22 by vopekdas         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:33:32 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new_node);
+void	ft_lstadd_front(t_list **lst, t_list *new_node);
 void	ft_lstclear(t_list **lst, void (*del)(int*));
 void	ft_lstdelone(t_list *lst, void (*del)(int*));
 void	ft_lstiter(t_list *lst, void (*f)(int *));
