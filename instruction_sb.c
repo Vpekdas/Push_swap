@@ -15,19 +15,13 @@
 void	ft_instruction_sb(t_list **list)
 {
 	int		temp;
-	t_list	*first;
-	t_list	*second;
 
-
-	if (!list)
+	if (!list || !(*list) || !(*list)->next)
 		return ;
-	first = *list;
-	if (first->next == NULL)
-		return ;
-	second = first->next;
-	temp = first->content;
-	first->content = second->content;
-	second->content = temp;
+	temp = (*list)->content;
+	(*list)->content = (*list)->next->content;
+	(*list)->next->content = temp;
+	return ;
 
 }
 // int	main() {
@@ -39,5 +33,5 @@ void	ft_instruction_sb(t_list **list)
 // 	node2->next = node3;
 // 	ft_printf("BEFORE FUNCTION : %d -> %d -> %d -> null\n", node1->content, node2->content, node3->content);
 // 	ft_instruction_sb(&node1);
-// 	ft_printf("BEFORE FUNCTION : %d -> %d -> %d -> null\n", node1->content, node2->content, node3->content);
+// 	ft_printf("AFTER FUNCTION : %d -> %d -> %d -> null\n", node1->content, node2->content, node3->content);
 // }

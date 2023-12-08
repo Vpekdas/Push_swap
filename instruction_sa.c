@@ -15,19 +15,13 @@
 void	ft_instruction_sa(t_list **list)
 {
 	int		temp;
-	t_list	*first;
-	t_list	*second;
 
-
-	if (!list)
+	if (!list || !(*list) || !(*list)->next)
 		return ;
-	first = *list;
-	if (first->next == NULL)
-		return ;
-	second = first->next;
-	temp = first->content;
-	first->content = second->content;
-	second->content = temp;
+	temp = (*list)->content;
+	(*list)->content = (*list)->next->content;
+	(*list)->next->content = temp;
+	return ;
 
 }
 // int	main() {

@@ -14,6 +14,10 @@ NAME = push_swap
 
 SOURCES =  instruction_sa.c \
 			instruction_sb.c \
+			instruction_ss.c \
+			instruction_pa.c \
+
+
 
 LIBFT_PATH = Libft
 
