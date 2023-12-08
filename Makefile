@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2023/12/08 16:28:38 by vopekdas         ###   ########.fr        #
+#    Updated: 2023/12/08 17:08:29 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = push_swap
 
 SOURCES =  instruction_push.c \
 			instruction_swap.c \
+			instruction_rotate.c \
 
 LIBFT_PATH = Libft
 
