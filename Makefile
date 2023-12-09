@@ -15,6 +15,8 @@ NAME = push_swap
 SOURCES =  instruction_push.c \
 			instruction_swap.c \
 			instruction_rotate.c \
+			instruction_reverse_rotate.c \
+
 
 LIBFT_PATH = Libft
 

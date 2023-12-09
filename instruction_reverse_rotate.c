@@ -1,20 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   instruction_rotate.c                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 16:29:27 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/08 17:25:39 by vopekdas         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Libft/libft.h"
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
-void	ft_instruction_ra(t_list **list)
+void	ft_instruction_rra(t_list **list)
 {
 	int		temp;
 	t_list	*current;
@@ -22,19 +10,17 @@ void	ft_instruction_ra(t_list **list)
 	if (!list || !(*list) || !(*list)->next)
 		return ;
 	current = *list;
+	temp = 0;
 	while (current)
 	{
-		temp = current->content;
-		if (current->next)
-		{
-			current->content = current->next->content;
-			current->next->content = temp;
-		}
+		temp = ft_lstlast(*list)->content;
+		ft_lstlast(*list)->content = current->content;
+		current->content = temp;
 		current = current->next;
 	}
 }
 
-void	ft_instruction_rb(t_list **list)
+void	ft_instruction_rrb(t_list **list)
 {
 	int		temp;
 	t_list	*current;
@@ -42,14 +28,12 @@ void	ft_instruction_rb(t_list **list)
 	if (!list || !(*list) || !(*list)->next)
 		return ;
 	current = *list;
+	temp = 0;
 	while (current)
 	{
-		temp = current->content;
-		if (current->next)
-		{
-			current->content = current->next->content;
-			current->next->content = temp;
-		}
+		temp = ft_lstlast(*list)->content;
+		ft_lstlast(*list)->content = current->content;
+		current->content = temp;
 		current = current->next;
 	}
 }
@@ -75,7 +59,7 @@ void	ft_instruction_rb(t_list **list)
 // 	}
 // 	ft_printf("%s\n", current);
 
-// 	ft_instruction_ra(&node1);
+// 	ft_instruction_rra(&node1);
 
 // 	current = node1;
 // 	ft_printf("AFTER FUNCTION : ");
@@ -87,12 +71,12 @@ void	ft_instruction_rb(t_list **list)
 // 	ft_printf("%s\n", current);
 // }
 
-void	ft_instruction_rr(t_list **list, t_list **list2)
+void	ft_instruction_rrr(t_list **list, t_list **list2)
 {
 	if (!list || !(*list2))
 		return ;
-	ft_instruction_ra(list);
-	ft_instruction_rb(list2);
+	ft_instruction_rra(list);
+	ft_instruction_rrb(list2);
 	return ;
 }
 
@@ -135,7 +119,7 @@ void	ft_instruction_rr(t_list **list, t_list **list2)
 // 	}
 // 	ft_printf("%s\n", current2);
 
-// 	ft_instruction_rr(&node1, &node5);
+// 	ft_instruction_rrr(&node1, &node5);
 
 // 	current = node1;
 // 	current2 = node5;
