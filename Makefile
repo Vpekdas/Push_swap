@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2023/12/09 15:57:41 by vopekdas         ###   ########.fr        #
+#    Updated: 2023/12/09 17:19:15 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,9 @@ SOURCES =  instruction_push.c \
 			instruction_swap.c \
 			instruction_rotate.c \
 			instruction_reverse_rotate.c \
-			parsi.c \
+			create_list_argv.c \
 			main.c \
+			checking_errors.c \
 
 LIBFT_PATH = Libft
 

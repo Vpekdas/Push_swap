@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   checking_errors.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 15:08:40 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/09 17:20:00 by vopekdas         ###   ########.fr       */
+/*   Created: 2023/12/09 17:10:39 by vopekdas          #+#    #+#             */
+/*   Updated: 2023/12/09 17:28:30 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,31 @@
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
-// int	main(int	argc, char **argv)
-// {
-// 	int		i;
-// 	t_list	*new_list;
+int	ft_check_not_int(int argc, char **str)
+{
+	int	i;
+	int	j;
 
-// 	if (argc <= 1)
-// 		return (1);
+	i = 1;
+	j = 0;
+	while (i < argc)
+	{
+		while (str[i][j])
+		{
+			if (!ft_isdigit(str[i][j]))
+				return (0);
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	return (1);
+}
+
+// int	main (int argc, char **argv) {
+// 	int	i;
+
 // 	i = 1;
-// 	new_list = ft_linked_list(argc, argv);
-// 	return (0);
+// 	ft_printf("%d\n", ft_check_not_int(argc, argv));
+// 	return 0;
 // }
