@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_instruction_sa_sb(t_list **list)
+void	ft_instruction_sa(t_list **list)
 {
 	int		temp;
 
@@ -22,7 +22,18 @@ void	ft_instruction_sa_sb(t_list **list)
 	(*list)->content = (*list)->next->content;
 	(*list)->next->content = temp;
 	return ;
+}
 
+void	ft_instruction_sb(t_list **list)
+{
+	int		temp;
+
+	if (!list || !(*list) || !(*list)->next)
+		return ;
+	temp = (*list)->content;
+	(*list)->content = (*list)->next->content;
+	(*list)->next->content = temp;
+	return ;
 }
 // int	main() {
 // 	t_list *node1 = ft_lstnew(1);
@@ -40,8 +51,8 @@ void	ft_instruction_ss(t_list **list, t_list **list2)
 {
 	if (!list || !list2)
 		return ;
-	ft_instruction_sa_sb(list);
-	ft_instruction_sa_sb(list2);
+	ft_instruction_sa(list);
+	ft_instruction_sb(list2);
 	return ;
 }
 // int	main() {

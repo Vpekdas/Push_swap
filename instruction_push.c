@@ -12,7 +12,15 @@
 
 #include "push_swap.h"
 
-void	ft_instruction_pa_pb(t_list **list, t_list **list2)
+void	ft_instruction_pa(t_list **list, t_list **list2)
+{
+	if (!list || !list2 || !(*list2))
+		return ;
+	ft_lstadd_front(list, *(list2));
+	return ;
+}
+
+void	ft_instruction_pb(t_list **list, t_list **list2)
 {
 	if (!list || !list2 || !(*list2))
 		return ;

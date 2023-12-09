@@ -14,24 +14,57 @@
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
-void	ft_instruction_ra_rb(t_list **list)
+void	ft_instruction_ra(t_list **list)
 {
 	int		temp;
+	t_list	*current;
 
-	if (!list)
+	if (!list || !(*list) || !(*list)->next)
 		return ;
-	temp = (*list)->content;
-	(*list)->content = ft_lstlast(*list)->content;
-	ft_lstlast(*list)->content = temp;
+	current = *list;
+	while (current)
+	{
+		temp = current->content;
+		if (current->next)
+		{
+			current->content = current->next->content;
+			current->next->content = temp;
+		}
+		current = current->next;
+	}
+}
+
+void	ft_instruction_rb(t_list **list)
+{
+	int		temp;
+	t_list	*current;
+
+	if (!list || !(*list) || !(*list)->next)
+		return ;
+	current = *list;
+	while (current)
+	{
+		temp = current->content;
+		if (current->next)
+		{
+			current->content = current->next->content;
+			current->next->content = temp;
+		}
+		current = current->next;
+	}
 }
 
 // int	main () {
 // 	t_list	*node1 = ft_lstnew(1);
 // 	t_list	*node2 = ft_lstnew(2);
 // 	t_list	*node3 = ft_lstnew(3);
+// 	t_list	*node4 = ft_lstnew(4);
+
 
 // 	node1->next = node2;
 // 	node2->next = node3;
+// 	node3->next = node4;
+
 
 // 	t_list	*current = node1;
 // 	ft_printf("BEFORE FUNCTION : ");
@@ -58,8 +91,8 @@ void	ft_instruction_rr(t_list **list, t_list **list2)
 {
 	if (!list || !(*list2))
 		return ;
-	ft_instruction_ra_rb(list);
-	ft_instruction_ra_rb(list2);
+	ft_instruction_ra(list);
+	ft_instruction_rb(list2);
 	return ;
 }
 

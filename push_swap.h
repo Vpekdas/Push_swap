@@ -17,9 +17,5 @@
 # include "Libft/libft.h"
 # include "ft_printf/include/ft_printf.h"
 
-void	ft_instruction_pa_pb(t_list **list, t_list **list2);
-void	ft_instruction_sa_sb(t_list **list);
-void	ft_instruction_ss(t_list **list, t_list **list2);
-
 
 #endif
