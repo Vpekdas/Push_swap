@@ -26,19 +26,35 @@ int	ft_check_not_int(int argc, char **str)
 		while (str[i][j])
 		{
 			if (!ft_isdigit(str[i][j]))
-				return (0);
+				return (1);
 			j++;
 		}
 		j = 0;
 		i++;
 	}
-	return (1);
+	return (0);
+}
+
+int	ft_check_bigger_than_int(int argc, char **str)
+{
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (ft_atoi(str[i]) < 0 && ft_strlen(str[i]) > 11)
+			return (1);
+		if (ft_atoi(str[i]) > 0 && ft_strlen(str[i]) > 10)
+			return (1);
+		if ((ft_atoi(str[i]) > INT_MAX) || ((ft_atoi(str[i]) < INT_MIN)))
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 // int	main (int argc, char **argv) {
-// 	int	i;
 
-// 	i = 1;
-// 	ft_printf("%d\n", ft_check_not_int(argc, argv));
+// 	ft_printf("%d\n", ft_check_bigger_than_int(argc, argv));
 // 	return 0;
 // }
