@@ -29,6 +29,9 @@ void	ft_instruction_sa(t_list **list);
 void	ft_instruction_sb(t_list **list);
 void	ft_instruction_ss(t_list **list, t_list **list2);
 t_list	*ft_linked_list(int argc, char **argv);
+int	ft_check_not_int(int argc, char **argv);
+int	ft_check_bigger_than_int(int argc, char **argv);
+int	ft_check_is_not_duplicate(int argc, char **argv);
 
 
 #endif

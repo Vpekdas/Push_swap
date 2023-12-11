@@ -14,7 +14,7 @@
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
-int	ft_check_not_int(int argc, char **str)
+int	ft_check_not_int(int argc, char **argv)
 {
 	int	i;
 	int	j;
@@ -23,9 +23,9 @@ int	ft_check_not_int(int argc, char **str)
 	j = 0;
 	while (i < argc)
 	{
-		while (str[i][j])
+		while (argv[i][j])
 		{
-			if (!ft_isdigit(str[i][j]))
+			if (!ft_isdigit(argv[i][j]))
 				return (1);
 			j++;
 		}
@@ -35,19 +35,40 @@ int	ft_check_not_int(int argc, char **str)
 	return (0);
 }
 
-int	ft_check_bigger_than_int(int argc, char **str)
+int	ft_check_bigger_than_int(int argc, char **argv)
 {
 	int	i;
 
 	i = 1;
 	while (i < argc)
 	{
-		if (ft_atoi(str[i]) < 0 && ft_strlen(str[i]) > 11)
+		if (ft_atoi(argv[i]) < 0 && ft_strlen(argv[i]) > 11)
 			return (1);
-		if (ft_atoi(str[i]) > 0 && ft_strlen(str[i]) > 10)
+		if (ft_atoi(argv[i]) > 0 && ft_strlen(argv[i]) > 10)
 			return (1);
-		if ((ft_atoi(str[i]) > INT_MAX) || ((ft_atoi(str[i]) < INT_MIN)))
+		if ((ft_atoi(argv[i]) > INT_MAX) || ((ft_atoi(argv[i]) < INT_MIN)))
 			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	ft_check_is_not_duplicate(int argc, char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	j = 0;
+	while (i < argc)
+	{
+		j = i + 1;
+		while (j < argc)
+		{
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+				return (1);
+			j++;
+		}
 		i++;
 	}
 	return (0);
@@ -55,6 +76,6 @@ int	ft_check_bigger_than_int(int argc, char **str)
 
 // int	main (int argc, char **argv) {
 
-// 	ft_printf("%d\n", ft_check_bigger_than_int(argc, argv));
+// 	ft_printf("%d\n", ft_check_is_not_duplicate(argc, argv));
 // 	return 0;
 // }
