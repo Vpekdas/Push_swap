@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2023/12/09 17:19:15 by vopekdas         ###   ########.fr        #
+#    Updated: 2023/12/12 11:22:57 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SOURCES =  instruction_push.c \
 			create_list_argv.c \
 			main.c \
 			checking_errors.c \
+			sort_three.c \
 
 LIBFT_PATH = Libft
 
