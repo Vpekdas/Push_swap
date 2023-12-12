@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 11:39:40 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/12 17:22:54 by vopekdas         ###   ########.fr       */
+/*   Updated: 2023/12/12 17:35:16 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	main (int argc, char **argv) {
 	}
 	ft_printf("%s\n", current);
 
-	ft_instruction_pb(&list2, &list1);
+	ft_instruction_pb(&list1, &list2);
+	ft_instruction_pb(&list1, &list2);
 
 	current = list2;
 	while(current)
