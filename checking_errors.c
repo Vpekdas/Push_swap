@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:10:39 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/09 17:28:30 by vopekdas         ###   ########.fr       */
+/*   Updated: 2023/12/11 17:08:40 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,6 @@ int	ft_check_is_not_duplicate(int argc, char **argv)
 
 // int	main (int argc, char **argv) {
 
-// 	ft_printf("%d\n", ft_check_is_not_duplicate(argc, argv));
+// 	ft_printf("%d\n", ft_check_bigger_than_int(argc, argv));
 // 	return 0;
 // }
