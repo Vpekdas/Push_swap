@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   create_list_argv.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 14:32:33 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/09 15:11:26 by vopekdas         ###   ########.fr       */
+/*   Updated: 2023/12/12 15:33:13 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,3 @@ t_list	*ft_linked_list(int argc, char **argv)
 	}
 	return (new_list);
 }
-// int	main(int	argc, char **argv)
-// {
-// 	int		i;
-// 	t_list	*new_list;
-// 	t_list	*current;
-
-// 	i = 1;
-// 	new_list = ft_linked_list(argc, argv);
-// 	current = new_list;
-// 	while (current)
-// 	{
-// 		ft_printf("%d -> ", current->content);
-// 		current = current->next;
-// 	}
-// 	return (0);
-// }

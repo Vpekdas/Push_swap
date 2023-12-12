@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:29:27 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/12 11:11:26 by vopekdas         ###   ########.fr       */
+/*   Updated: 2023/12/12 14:43:36 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	ft_instruction_ra(t_list **list)
 		current = current->next;
 	}
 	ft_printf("ra\n");
-
 }
 
 void	ft_instruction_rb(t_list **list)
