@@ -39,5 +39,5 @@ void	ft_sort_three(t_list **list)
 		ft_instruction_ra(list);
 	}
 	if (top < mid && mid > bot && bot < top)
-		ft_instruction_ra(list);
+		ft_instruction_rra(list);
 }
