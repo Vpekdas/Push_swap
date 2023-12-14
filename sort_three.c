@@ -25,19 +25,19 @@ void	ft_sort_three(t_list **list)
 	bot = (*list)->next->next->content;
 
 	if (top > mid && mid < bot && bot > top)
-		ft_instruction_sa(list);
+		ft_sa(list);
 	if (top > mid && mid > bot && bot < top)
 	{
-		ft_instruction_sa(list);
-		ft_instruction_rra(list);
+		ft_sa(list);
+		ft_rra(list);
 	}
 	if (top > mid && mid < bot && bot < top)
-		ft_instruction_ra(list);
+		ft_ra(list);
 	if (top < mid && mid > bot && bot > top)
 	{
-		ft_instruction_sa(list);
-		ft_instruction_ra(list);
+		ft_sa(list);
+		ft_ra(list);
 	}
 	if (top < mid && mid > bot && bot < top)
-		ft_instruction_rra(list);
+		ft_rra(list);
 }

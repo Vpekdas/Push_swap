@@ -14,28 +14,28 @@
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
-void	ft_instruction_pa(t_list **stack_a, t_list **stack_b)
+void	ft_pa(t_list **a, t_list **b)
 {
 	t_list	*temp;
 
-	if (!*stack_a)
+	if (!*a)
 		return ;
-	temp = (*stack_a)->next;
-	(*stack_a)->next = *stack_b;
-	*stack_b = *stack_a;
-	*stack_a = temp;
+	temp = (*a)->next;
+	(*a)->next = *b;
+	*b = *a;
+	*a = temp;
 	ft_printf("pa\n") ;
 }
 
-void	ft_instruction_pb(t_list **stack_b, t_list **stack_a)
+void	ft_pb(t_list **b, t_list **a)
 {
 	t_list	*temp;
 
-	if (!*stack_b)
+	if (!*b)
 		return ;
-	temp = (*stack_b)->next;
-	(*stack_b)->next = *stack_a;
-	*stack_a = *stack_b;
-	*stack_b = temp;
+	temp = (*b)->next;
+	(*b)->next = *a;
+	*a = *b;
+	*b = temp;
 	ft_printf("pb\n") ;
 }

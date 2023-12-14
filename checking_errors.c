@@ -73,9 +73,3 @@ int	ft_check_is_not_duplicate(int argc, char **argv)
 	}
 	return (0);
 }
-
-// int	main (int argc, char **argv) {
-
-// 	ft_printf("%d\n", ft_check_bigger_than_int(argc, argv));
-// 	return 0;
-// }

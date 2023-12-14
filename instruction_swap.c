@@ -13,7 +13,7 @@
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
-void	ft_instruction_sa(t_list **list)
+void	ft_sa(t_list **list)
 {
 	int		temp;
 
@@ -25,7 +25,7 @@ void	ft_instruction_sa(t_list **list)
 	ft_printf("sa\n");
 }
 
-void	ft_instruction_sb(t_list **list)
+void	ft_sb(t_list **list)
 {
 	int		temp;
 
@@ -37,11 +37,11 @@ void	ft_instruction_sb(t_list **list)
 	ft_printf("sb\n");
 }
 
-void	ft_instruction_ss(t_list **list, t_list **list2)
+void	ft_ss(t_list **list, t_list **list2)
 {
 	if (!list || !list2)
 		return ;
-	ft_instruction_sa(list);
-	ft_instruction_sb(list2);
+	ft_sa(list);
+	ft_sb(list2);
 	ft_printf("ss\n");
 }

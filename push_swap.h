@@ -17,21 +17,22 @@
 # include "Libft/libft.h"
 # include "ft_printf/include/ft_printf.h"
 
-void	ft_instruction_pa(t_list **stack_a, t_list **stack_b);
-void	ft_instruction_pb(t_list **stack_a, t_list **stack_b);
-void	ft_instruction_rra(t_list **list);
-void	ft_instruction_rrb(t_list **list);
-void	ft_instruction_rrr(t_list **list, t_list **list2);
-void	ft_instruction_ra(t_list **list);
-void	ft_instruction_rb(t_list **list);
-void	ft_instruction_rr(t_list **list, t_list **list2);
-void	ft_instruction_sa(t_list **list);
-void	ft_instruction_sb(t_list **list);
-void	ft_instruction_ss(t_list **list, t_list **list2);
-t_list	*ft_linked_list(int argc, char **argv);
 int		ft_check_not_int(int argc, char **argv);
 int		ft_check_bigger_than_int(int argc, char **argv);
 int		ft_check_is_not_duplicate(int argc, char **argv);
+t_list	*ft_linked_list(int argc, char **argv);
+void	ft_pa(t_list **a, t_list **b);
+void	ft_pb(t_list **b, t_list **a);
+void	ft_rra(t_list **list);
+void	ft_rrb(t_list **list);
+void	ft_rrr(t_list **list, t_list **list2);
+void	ft_ra(t_list **list);
+void	ft_rb(t_list **list);
+void	ft_rr(t_list **list, t_list **list2);
+void	ft_sa(t_list **list);
+void	ft_sb(t_list **list);
+void	ft_ss(t_list **list, t_list **list2);
+void	ft_sort_three(t_list **list);
 void	ft_sort_three(t_list **list);
 
 #endif
