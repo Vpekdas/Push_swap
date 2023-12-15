@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 11:39:40 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/15 15:28:03 by vopekdas         ###   ########.fr       */
+/*   Updated: 2023/12/15 15:48:12 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,8 +128,11 @@ int	ft_check_sorted_five(t_list	**a)
 	current = (*a);
 	while (current)
 	{
-		if (current->content > current->next->content)
-			return (1);
+		if (current->next)
+		{
+			if (current->content > current->next->content)
+				return (1);
+		}
 		current = current->next;
 	}
 	return (0);
@@ -158,6 +161,7 @@ void	ft_sort_five(t_list	**a, t_list	**b)
 		ft_rotate_multiple(a, pos);
 	}
 }
+
 int	main (int argc, char **argv)
 {
 	t_list	*list = ft_linked_list(argc, argv);
