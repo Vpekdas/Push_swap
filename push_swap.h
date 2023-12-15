@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:18:19 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/12 17:03:57 by vopekdas         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:26:20 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,14 @@ void	ft_sb(t_list **list);
 void	ft_ss(t_list **list, t_list **list2);
 void	ft_sort_three(t_list **list);
 void	ft_sort_three(t_list **list);
+void	ft_ra_multiple(t_list **a, int pos);
+void	ft_rra_multiple(t_list **a, int pos);
+int		ft_find_biggest(t_list **a);
+int		ft_find_smaller(t_list **a);
+void	ft_rotate_multiple(t_list **a, int pos);
+int		ft_num_pos(t_list **a, int num);
+int		ft_find_right_pos(t_list **a, t_list **b);
+int		ft_check_sorted(t_list	**a);
+void	ft_sort_five(t_list	**a, t_list	**b);
 
 #endif

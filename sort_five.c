@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 11:39:40 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/15 15:48:12 by vopekdas         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:28:40 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_find_biggest(t_list **a)
 	t_list	*current;
 
 	num = (*a)->content;
-	current	= (*a);
+	current = (*a);
 	while (current)
 	{
 		if (current->content > num)
@@ -58,7 +58,7 @@ int	ft_find_smaller(t_list **a)
 	t_list	*current;
 
 	num = (*a)->content;
-	current	= (*a);
+	current = (*a);
 	while (current)
 	{
 		if (current->content <= num)
@@ -121,7 +121,7 @@ int	ft_find_right_pos(t_list **a, t_list **b)
 	return (pos);
 }
 
-int	ft_check_sorted_five(t_list	**a)
+int	ft_check_sorted(t_list	**a)
 {
 	t_list	*current;
 
@@ -154,7 +154,7 @@ void	ft_sort_five(t_list	**a, t_list	**b)
 	pos = ft_find_right_pos(a, b);
 	ft_rotate_multiple(a, pos);
 	ft_pa(b, a);
-	if (ft_check_sorted_five(a))
+	if (ft_check_sorted(a))
 	{
 		smaller = ft_find_smaller(a);
 		pos = ft_num_pos(a, smaller);
@@ -162,42 +162,42 @@ void	ft_sort_five(t_list	**a, t_list	**b)
 	}
 }
 
-int	main (int argc, char **argv)
-{
-	t_list	*list = ft_linked_list(argc, argv);
-	t_list	*list2 = NULL;
-	t_list	*current = list;
+// int	main (int argc, char **argv)
+// {
+// 	t_list	*list = ft_linked_list(argc, argv);
+// 	t_list	*list2 = NULL;
+// 	t_list	*current = list;
 
-	ft_printf("BEFORE SORTING\n");
-	ft_printf("==================\n");
-	while (current)
-	{
-		ft_printf("%d -> ", current->content);
-		current = current->next;
-	}
-	ft_printf("%s\n", current);
+// 	ft_printf("BEFORE SORTING\n");
+// 	ft_printf("==================\n");
+// 	while (current)
+// 	{
+// 		ft_printf("%d -> ", current->content);
+// 		current = current->next;
+// 	}
+// 	ft_printf("%s\n", current);
 
-	ft_sort_five(&list, &list2);
+// 	ft_sort_five(&list, &list2);
 
-	current = list;
+// 	current = list;
 
-	ft_printf("AFTER SORTING IN STACK A\n");
-	ft_printf("==================\n");
-	while (current)
-	{
-		ft_printf("%d -> ", current->content);
-		current = current->next;
-	}
-	ft_printf("%s\n", current);
+// 	ft_printf("AFTER SORTING IN STACK A\n");
+// 	ft_printf("==================\n");
+// 	while (current)
+// 	{
+// 		ft_printf("%d -> ", current->content);
+// 		current = current->next;
+// 	}
+// 	ft_printf("%s\n", current);
 
-	current = list2;
+// 	current = list2;
 
-	ft_printf("AFTER SORTING IN STACK B\n");
-	ft_printf("==================\n");
-	while (current)
-	{
-		ft_printf("%d -> ", current->content);
-		current = current->next;
-	}
-	ft_printf("%s\n", current);
-}
+// 	ft_printf("AFTER SORTING IN STACK B\n");
+// 	ft_printf("==================\n");
+// 	while (current)
+// 	{
+// 		ft_printf("%d -> ", current->content);
+// 		current = current->next;
+// 	}
+// 	ft_printf("%s\n", current);
+// }

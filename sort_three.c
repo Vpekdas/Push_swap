@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 11:08:28 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/12 11:39:38 by vopekdas         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:29:40 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	ft_sort_three(t_list **list)
 	top = (*list)->content;
 	mid = (*list)->next->content;
 	bot = (*list)->next->next->content;
-
 	if (top > mid && mid < bot && bot > top)
 		ft_sa(list);
 	if (top > mid && mid > bot && bot < top)
