@@ -21,7 +21,6 @@ SOURCES =  instruction_push.c \
 			checking_errors.c \
 			sort_three.c \
 			sort_five.c \
-			sort_hundred.c \
 
 LIBFT_PATH = Libft
 
