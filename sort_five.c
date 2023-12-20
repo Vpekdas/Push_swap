@@ -68,7 +68,7 @@ int	ft_find_smaller(t_list **a)
 	return (num);
 }
 
-void	ft_rotate_multiple_a(t_list **a, int pos)
+void	ft_rotate_multiple(t_list **a, int pos)
 {
 	int	len;
 
