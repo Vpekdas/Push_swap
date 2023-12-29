@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2023/12/18 13:43:31 by vopekdas         ###   ########.fr        #
+#    Updated: 2023/12/29 15:07:02 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SOURCES =  instruction_push.c \
 			sort_three.c \
 			sort_five.c \
 			radix_sort.c \
+			sort_opti.c \
 
 
 LIBFT_PATH = Libft
