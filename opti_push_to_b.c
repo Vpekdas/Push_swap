@@ -14,7 +14,7 @@
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
-int	ft_ra_rb(t_list **a, t_list **b)
+int	ft_ra_rb_b(t_list **a, t_list **b)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ int	ft_ra_rb(t_list **a, t_list **b)
 	return (i);
 }
 
-int	ft_rra_rrb(t_list **a, t_list **b)
+int	ft_rra_rrb_b(t_list **a, t_list **b)
 {
 	int i;
 
@@ -37,7 +37,7 @@ int	ft_rra_rrb(t_list **a, t_list **b)
 	return (i);
 }
 
-int	ft_rra_rb(t_list	**a, t_list **b)
+int	ft_rra_rb_b(t_list	**a, t_list **b)
 {
 	int	i;
 
@@ -48,7 +48,7 @@ int	ft_rra_rb(t_list	**a, t_list **b)
 	return (i);
 }
 
-int	ft_ra_rrb(t_list **a, t_list **b)
+int	ft_ra_rrb_b(t_list **a, t_list **b)
 {
 	int	i;
 
@@ -61,15 +61,28 @@ int	ft_ra_rrb(t_list **a, t_list **b)
 
 int	ft_which_rotate_b(t_list **a, t_list **b)
 {
-	int		i;
 	t_list	*current;
+	int		cost;
+	int 	move;
 
-	i = ft_rra_rrb(a, b);
 	current = *a;
+	cost = ft_rra_rrb_b(a, b);
+	move = 0;
 	while (current)
 	{
-
+		move = ft_ra_rb_b(a, b);
+		if (cost > move)
+			cost = move;
+		move = ft_ra_rrb_b(a, b);
+		if (cost > move)
+			cost = move;
+		move = ft_rra_rb_b(a, b);
+		if (cost > move)
+			cost = move;
+		move = ft_rra_rrb_b(a, b);
+		if (cost > move)
+			cost = move;
 		current = current->next;
 	}
-	return (i);
+	return (cost);
 }
