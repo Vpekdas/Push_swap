@@ -18,7 +18,7 @@ int	ft_case_ra_rb(t_list **a, t_list **b, int c)
 {
 	int	i;
 
-	i = ft_find_right_pos(b, c) > 0;
+	i = ft_find_right_pos(b, c);
 	if (i < ft_num_pos(a, c))
 		i = ft_num_pos(a, c);
 	return (i);
@@ -132,24 +132,24 @@ int	ft_which_move_b(t_list **a, t_list **b)
 void	ft_sort_till_3_remains(t_list **a, t_list **b)
 {
 	int		i;
-	t_list	*tmp;
+	t_list	*current;
 
-	while (ft_lstsize(*a) > 3)
+	while (ft_lstsize(*a) > 3 && ft_check_sorted(a) == 1)
 	{
-		tmp = *a;
+		current = *a;
 		i = ft_which_move_b(a, b);
 		while (i >= 0)
 		{
-			if (i == ft_case_ra_rb(a, b, tmp->content))
-				i = ft_apply_ra_rb(a, b, tmp->content);
-			else if (i == ft_case_ra_rrb(a, b, tmp->content))
-				i = ft_apply_ra_rrb(a, b, tmp->content);
-			else if (i == ft_case_rra_rb(a, b, tmp->content))
-				i = ft_apply_rra_rb(a, b, tmp->content);
-			else if (i == ft_case_rra_rrb(a, b, tmp->content))
-				i = ft_apply_rra_rrb(a, b, tmp->content);
+			if (i == ft_case_ra_rb(a, b, current->content))
+				i = ft_apply_ra_rb(a, b, current->content);
+			else if (i == ft_case_ra_rrb(a, b, current->content))
+				i = ft_apply_ra_rrb(a, b, current->content);
+			else if (i == ft_case_rra_rb(a, b, current->content))
+				i = ft_apply_rra_rb(a, b, current->content);
+			else if (i == ft_case_rra_rrb(a, b, current->content))
+				i = ft_apply_rra_rrb(a, b, current->content);
 			else
-				tmp = tmp->next;
+				current = current->next;
 		}
 	}
 }
