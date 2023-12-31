@@ -37,8 +37,6 @@ int	ft_find_smaller(t_list **a)
 	int		num;
 	t_list	*current;
 
-	if (!(a) || !(*a))
-		return (0);
 	current = (*a);
 	num = current->content;
 	while (current)
@@ -75,8 +73,7 @@ int	ft_find_right_pos(t_list **a, int c)
 	int		biggest;
 	int		last_c;
 
-	if (!(a) || !(*a))
-		return (0);
+
 	current = (*a);
 	pos = 1;
 	smaller = ft_find_smaller(a);
