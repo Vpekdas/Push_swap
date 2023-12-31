@@ -26,7 +26,6 @@ SOURCES =  instruction_push.c \
 			opti_push_to_b.c \
 
 
-
 LIBFT_PATH = Libft
 
 FT_PRINTF_PATH = ft_printf
@@ -35,7 +34,7 @@ OBJECTS = $(SOURCES:.c=.o)
 
 CC=cc
 
-CFLAGS=-Wall -Wextra -Werror -Iinclude
+CFLAGS=-Wall -Wextra -Werror -g3 -Iinclude
 
 RM = rm -f
 
