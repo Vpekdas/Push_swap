@@ -14,14 +14,12 @@
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
-int	ft_find_biggest(t_list **a)
+int	ft_find_biggest(t_list *a)
 {
 	int		num;
 	t_list	*current;
 
-	if (!(a) || !(*a))
-		return (0);
-	current = (*a);
+	current = a;
 	num = current->content;
 	while (current)
 	{
@@ -32,12 +30,12 @@ int	ft_find_biggest(t_list **a)
 	return (num);
 }
 
-int	ft_find_smaller(t_list **a)
+int	ft_find_smaller(t_list *a)
 {
 	int		num;
 	t_list	*current;
 
-	current = (*a);
+	current = a;
 	num = current->content;
 	while (current)
 	{
@@ -48,12 +46,12 @@ int	ft_find_smaller(t_list **a)
 	return (num);
 }
 
-int	ft_num_pos(t_list **a, int num)
+int	ft_num_pos(t_list *a, int num)
 {
 	t_list	*current;
 	int		pos;
 
-	current = (*a);
+	current = a;
 	pos = 0;
 	while (current)
 	{
@@ -65,7 +63,7 @@ int	ft_num_pos(t_list **a, int num)
 	return (pos);
 }
 
-int	ft_find_right_pos(t_list **a, int c)
+int	ft_find_right_pos(t_list *a, int c)
 {
 	t_list	*current;
 	int		pos;
@@ -74,13 +72,13 @@ int	ft_find_right_pos(t_list **a, int c)
 	int		last_c;
 
 
-	current = (*a);
+	current = a;
 	pos = 1;
 	smaller = ft_find_smaller(a);
 	biggest = ft_find_biggest(a);
-	last_c = ft_lstlast(*a)->content;
+	last_c = ft_lstlast(a)->content;
 
-	if (c > (*a)->content && c < last_c)
+	if (c > a->content && c < last_c)
 		return (pos);
 	if (c > biggest || c < smaller)
 		return (ft_num_pos(a, biggest));

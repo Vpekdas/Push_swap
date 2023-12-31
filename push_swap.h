@@ -33,16 +33,11 @@ void	ft_sa(t_list **list);
 void	ft_sb(t_list **list);
 void	ft_ss(t_list **list, t_list **list2);
 void	ft_sort_three(t_list **list);
-void	ft_ra_multiple(t_list **a, int pos);
-void	ft_rra_multiple(t_list **a, int pos);
-int		ft_find_biggest(t_list **a);
-int		ft_find_smaller(t_list **a);
-void	ft_rotate_multiple(t_list **a, int pos);
-int		ft_num_pos(t_list **a, int num);
-int		ft_find_right_pos(t_list **a, int c);
+int		ft_find_biggest(t_list *a);
+int		ft_find_smaller(t_list *a);
+int		ft_num_pos(t_list *a, int num);
+int		ft_find_right_pos(t_list *a, int c);
 int		ft_check_sorted(t_list	**a);
-void	ft_sort_five(t_list	**a, t_list	**b);
 void	ft_sort_till_3_remains(t_list **a, t_list **b);
-int		ft_num_pos(t_list **a, int num);
 
 #endif

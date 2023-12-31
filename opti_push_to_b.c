@@ -14,7 +14,7 @@
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
-int	ft_case_ra_rb(t_list **a, t_list **b, int c)
+int	ft_case_ra_rb(t_list *a, t_list *b, int c)
 {
 	int	i;
 
@@ -24,49 +24,49 @@ int	ft_case_ra_rb(t_list **a, t_list **b, int c)
 	return (i);
 }
 
-int	ft_case_rra_rb(t_list	**a, t_list **b, int c)
+int	ft_case_rra_rb(t_list	*a, t_list *b, int c)
 {
 	int	i;
 
 	i = 0;
 	if (ft_num_pos(a, c) > 0)
-		i = ft_lstsize(*a) - ft_num_pos(a, c);
+		i = ft_lstsize(a) - ft_num_pos(a, c);
 	i = ft_find_right_pos(b, c) + i;
 	return (i);
 }
 
-int	ft_case_rra_rrb(t_list **a, t_list **b, int c)
+int	ft_case_rra_rrb(t_list *a, t_list *b, int c)
 {
 	int i;
 
 	i = 0;
 	if (ft_find_right_pos(b, c) > 0)
-		i = ft_lstsize(*b) - ft_find_right_pos(b, c);
-	if (i < (ft_lstsize(*a) - ft_num_pos(a, c)) && ft_num_pos(a, c) > 0)
-		i = ft_lstsize(*a) - ft_num_pos(a, c);
+		i = ft_lstsize(b) - ft_find_right_pos(b, c);
+	if (i < (ft_lstsize(a) - ft_num_pos(a, c)) && ft_num_pos(a, c) > 0)
+		i = ft_lstsize(a) - ft_num_pos(a, c);
 	return (i);
 }
 
-int	ft_case_ra_rrb(t_list **a, t_list **b, int c)
+int	ft_case_ra_rrb(t_list *a, t_list *b, int c)
 {
 	int	i;
 
 	i = 0;
 	if (ft_find_right_pos(b, c))
-		i = ft_lstsize(*b) - ft_find_right_pos(b, c);
+		i = ft_lstsize(b) - ft_find_right_pos(b, c);
 	i = ft_num_pos(a, c) + i;
 	return (i);
 }
 
 int	ft_apply_ra_rb(t_list **a, t_list **b, int c)
 {
-	while ((*a)->content != c && ft_find_right_pos(b, c) > 0)
+	while ((*a)->content != c && ft_find_right_pos(*b, c) > 0)
 		ft_rr(a, b);
 	while ((*a)->content != c)
 		ft_ra(a);
-	while (ft_find_right_pos(b, c) > 0)
+	while (ft_find_right_pos(*b, c) > 0)
 		ft_rb(b);
-	ft_pb(b, a);
+	ft_pb(a, b);
 	return (-1);
 }
 
@@ -74,21 +74,21 @@ int	ft_apply_ra_rrb(t_list **a, t_list **b, int c)
 {
 	while ((*a)->content != c)
 		ft_ra(a);
-	while (ft_find_right_pos(b, c) > 0)
+	while (ft_find_right_pos(*b, c) > 0)
 		ft_rrb(b);
-	ft_pb(b, a);
+	ft_pb(a, b);
 	return (-1);
 }
 
 int	ft_apply_rra_rrb(t_list **a, t_list **b, int c)
 {
-	while (((*a)->content != c) && (ft_find_right_pos(b, c) > 0))
+	while (((*a)->content != c) && (ft_find_right_pos(*b, c) > 0))
 		ft_rrr(a, b);
 	while ((*a)->content != c)
 		ft_rra(a);
-	while (ft_find_right_pos(b, c) > 0)
+	while (ft_find_right_pos(*b, c) > 0)
 		ft_rrb(b);
-	ft_pb(b, a);
+	ft_pb(a, b);
 	return (-1);
 }
 
@@ -96,19 +96,19 @@ int	ft_apply_rra_rb(t_list **a, t_list **b, int c)
 {
 	while ((*a)->content != c)
 		ft_rra(a);
-	while (ft_find_right_pos(b, c) > 0)
+	while (ft_find_right_pos(*b, c) > 0)
 		ft_rb(b);
-	ft_pb(b, a);
+	ft_pb(a, b);
 	return (-1);
 }
 
-int	ft_which_move_b(t_list **a, t_list **b)
+int	ft_which_move_b(t_list *a, t_list *b)
 {
 	t_list	*current;
 	int		cost;
 	int 	move;
 
-	current = *a;
+	current = a;
 	cost = ft_case_rra_rrb(a, b, current->content);
 	move = 0;
 	while (current)
@@ -136,17 +136,17 @@ void	ft_sort_till_3_remains(t_list **a, t_list **b)
 
 	while (ft_lstsize(*a) > 3 && ft_check_sorted(a) == 1)
 	{
-		current = *a;
-		i = ft_which_move_b(a, b);
+		current = (*a);
+		i = ft_which_move_b(*a, *b);
 		while (i >= 0)
 		{
-			if (i == ft_case_ra_rb(a, b, current->content))
+			if (i == ft_case_ra_rb(*a, *b, current->content))
 				i = ft_apply_ra_rb(a, b, current->content);
-			else if (i == ft_case_ra_rrb(a, b, current->content))
+			else if (i == ft_case_ra_rrb(*a, *b, current->content))
 				i = ft_apply_ra_rrb(a, b, current->content);
-			else if (i == ft_case_rra_rb(a, b, current->content))
+			else if (i == ft_case_rra_rb(*a, *b, current->content))
 				i = ft_apply_rra_rb(a, b, current->content);
-			else if (i == ft_case_rra_rrb(a, b, current->content))
+			else if (i == ft_case_rra_rrb(*a, *b, current->content))
 				i = ft_apply_rra_rrb(a, b, current->content);
 			else
 				current = current->next;
