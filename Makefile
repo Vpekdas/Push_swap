@@ -23,6 +23,8 @@ SOURCES =  instruction_push.c \
 			sort_five.c \
 			radix_sort.c \
 			sort_opti.c \
+			opti_push_to_b.c \
+
 
 
 LIBFT_PATH = Libft

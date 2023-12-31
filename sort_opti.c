@@ -16,11 +16,9 @@
 
 void	ft_sort_opti(t_list **a, t_list **b)
 {
-	int i;
-
-	i = 0;
 	ft_pb(a, b);
 	ft_pb(a, b);
+	ft_sort_till_3_remains(a, b);
 
 }
 

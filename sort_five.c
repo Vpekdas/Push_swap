@@ -96,26 +96,29 @@ int	ft_num_pos(t_list **a, int num)
 	return (pos);
 }
 
-int	ft_find_right_pos(t_list **a, t_list **b)
+int	ft_find_right_pos(t_list **a, int c)
 {
+	t_list	*current;
 	int		pos;
-	t_list	*tmp;
 	int		smaller;
 	int		biggest;
+	int		last_c;
 
+	current = (*a);
+	pos = 1;
 	smaller = ft_find_smaller(a);
 	biggest = ft_find_biggest(a);
-	tmp = (*a);
-	if ((*b)->content < smaller)
-		return (ft_num_pos(a, smaller));
-	if ((*b)->content > biggest)
-		return (ft_num_pos(a, biggest) + 1);
-	pos = 1;
-	while (tmp)
+	last_c = ft_lstlast(a);
+
+	if (c > (*a)->content && c < last_c)
+		return (pos);
+	if (c > biggest || c < smaller)
+		return (ft_num_pos(a, biggest));
+	while (current)
 	{
-		if ((*b)->content > tmp->content && (*b)->content < tmp->next->content)
+		if (current->next && c > current->content && c < current->next->content)
 			return (pos);
-		tmp = tmp->next;
+		current = current->next;
 		pos++;
 	}
 	return (pos);
