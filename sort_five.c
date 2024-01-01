@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 11:39:40 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/29 15:19:10 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/01 16:01:56 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,31 +65,25 @@ int	ft_num_pos(t_list *a, int num)
 
 int	ft_find_right_pos(t_list *a, int c)
 {
-	t_list	*current;
-	int		pos;
-	int		smaller;
-	int		biggest;
-	int		last_c;
+	int		i;
+	t_list	*tmp;
 
-
-	current = a;
-	pos = 1;
-	smaller = ft_find_smaller(a);
-	biggest = ft_find_biggest(a);
-	last_c = ft_lstlast(a)->content;
-
-	if (c > a->content && c < last_c)
-		return (pos);
-	if (c > biggest || c < smaller)
-		return (ft_num_pos(a, biggest));
-	while (current)
+	i = 1;
+	if (c > a->content && c < ft_lstlast(a)->content)
+		i = 0;
+	else if (c > ft_find_biggest(a) || c < ft_find_smaller(a))
+		i = ft_num_pos(a, ft_find_biggest(a));
+	else
 	{
-		if (current->next && c > current->content && c < current->next->content)
-			return (pos);
-		current = current->next;
-		pos++;
+		tmp = a->next;
+		while (a->content < c || tmp->content > c)
+		{
+			a = a->next;
+			tmp = a->next;
+			i++;
+		}
 	}
-	return (pos);
+	return (i);
 }
 
 int	ft_check_sorted(t_list	**a)

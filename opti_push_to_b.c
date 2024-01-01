@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   opti_rotate_a.c                                    :+:      :+:    :+:   */
+/*   opti_push_to_b.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 15:59:32 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/29 16:33:35 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/01 16:03:39 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_case_ra_rrb(t_list *a, t_list *b, int c)
 	int	i;
 
 	i = 0;
-	if (ft_find_right_pos(b, c))
+	if (ft_find_right_pos(b, c) > 0)
 		i = ft_lstsize(b) - ft_find_right_pos(b, c);
 	i = ft_num_pos(a, c) + i;
 	return (i);
@@ -134,9 +134,9 @@ void	ft_sort_till_3_remains(t_list **a, t_list **b)
 	int		i;
 	t_list	*current;
 
-	while (ft_lstsize(*a) > 3 && ft_check_sorted(a) == 1)
+	while (ft_lstsize(*a) > 3)
 	{
-		current = (*a);
+		current = *a;
 		i = ft_which_move_b(*a, *b);
 		while (i >= 0)
 		{
@@ -152,4 +152,51 @@ void	ft_sort_till_3_remains(t_list **a, t_list **b)
 				current = current->next;
 		}
 	}
+}
+
+void	ft_sort_opti(t_list **a, t_list **b)
+{
+	ft_pb(a, b);
+	ft_pb(a, b);
+	ft_sort_till_3_remains(a, b);
+}
+
+int	main (int argc, char **argv)
+{
+	t_list	*list = ft_linked_list(argc, argv);
+	t_list	*list2 = NULL;
+	t_list	*current = list;
+
+	ft_printf("BEFORE SORTING\n");
+	ft_printf("==================\n");
+	while (current)
+	{
+		ft_printf("%d -> ", current->content);
+		current = current->next;
+	}
+	ft_printf("%s\n", current);
+
+	ft_sort_opti(&list, &list2);
+
+	current = list;
+
+	ft_printf("AFTER SORTING IN STACK A\n");
+	ft_printf("==================\n");
+	while (current)
+	{
+		ft_printf("%d -> ", current->content);
+		current = current->next;
+	}
+	ft_printf("%s\n", current);
+
+	current = list2;
+
+	ft_printf("AFTER SORTING IN STACK B\n");
+	ft_printf("==================\n");
+	while (current)
+	{
+		ft_printf("%d -> ", current->content);
+		current = current->next;
+	}
+	ft_printf("%s\n", current);
 }
