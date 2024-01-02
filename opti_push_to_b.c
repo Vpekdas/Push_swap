@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 15:59:32 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/01 16:03:39 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/02 15:50:16 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ int	ft_apply_ra_rrb(t_list **a, t_list **b, int c)
 	ft_pb(a, b);
 	return (-1);
 }
-
 int	ft_apply_rra_rrb(t_list **a, t_list **b, int c)
 {
 	while (((*a)->content != c) && (ft_find_right_pos(*b, c) > 0))
@@ -91,7 +90,6 @@ int	ft_apply_rra_rrb(t_list **a, t_list **b, int c)
 	ft_pb(a, b);
 	return (-1);
 }
-
 int	ft_apply_rra_rb(t_list **a, t_list **b, int c)
 {
 	while ((*a)->content != c)
@@ -101,7 +99,6 @@ int	ft_apply_rra_rb(t_list **a, t_list **b, int c)
 	ft_pb(a, b);
 	return (-1);
 }
-
 int	ft_which_move_b(t_list *a, t_list *b)
 {
 	t_list	*current;
@@ -129,6 +126,7 @@ int	ft_which_move_b(t_list *a, t_list *b)
 	}
 	return (cost);
 }
+
 void	ft_sort_till_3_remains(t_list **a, t_list **b)
 {
 	int		i;
@@ -159,6 +157,7 @@ void	ft_sort_opti(t_list **a, t_list **b)
 	ft_pb(a, b);
 	ft_pb(a, b);
 	ft_sort_till_3_remains(a, b);
+	ft_sort_three(a);
 }
 
 int	main (int argc, char **argv)
