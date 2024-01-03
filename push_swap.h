@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:18:19 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/03 15:07:40 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:40:16 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ int		ft_find_right_pos(t_list *a, int c);
 int		ft_find_right_pos2(t_list *a, int c);
 
 void	ft_sort_three(t_list **list);
+void	ft_sort_till_empty(t_list **a, t_list **b);
 
 #endif 

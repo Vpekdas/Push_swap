@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 15:59:32 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/03 15:12:43 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:41:08 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,6 @@ int	ft_case_ra_rb(t_list *a, t_list *b, int c)
 		i = ft_num_pos(a, c);
 	return (i);
 }
-int	ft_case_ra_rb2(t_list *a, t_list *b, int c)
-{
-	int	i;
-
-	i = ft_find_right_pos2(a, c);
-	if (i < ft_num_pos(b, c))
-		i = ft_num_pos(b, c);
-	return (i);
-}
 
 int	ft_case_rra_rb(t_list	*a, t_list *b, int c)
 {
@@ -41,16 +32,6 @@ int	ft_case_rra_rb(t_list	*a, t_list *b, int c)
 	if (ft_num_pos(a, c) > 0)
 		i = ft_lstsize(a) - ft_num_pos(a, c);
 	i = ft_find_right_pos(b, c) + i;
-	return (i);
-}
-int	ft_case_rra_rb2(t_list	*a, t_list *b, int c)
-{
-	int	i;
-
-	i = 0;
-	if (ft_num_pos(b, c) > 0)
-		i = ft_lstsize(b) - ft_num_pos(b, c);
-	i = ft_find_right_pos2(a, c) + i;
 	return (i);
 }
 
@@ -66,18 +47,6 @@ int	ft_case_rra_rrb(t_list *a, t_list *b, int c)
 	return (i);
 }
 
-int	ft_case_rra_rrb2(t_list *a, t_list *b, int c)
-{
-	int	i;
-
-	i = 0;
-	if (ft_find_right_pos2(a, c) > 0)
-		i = ft_lstsize(a) - ft_find_right_pos2(a, c);
-	if (i < (ft_lstsize(b) - ft_num_pos(b, c)) && ft_num_pos(b, c) > 0)
-		i = ft_lstsize(b) - ft_num_pos(b, c);
-	return (i);
-}
-
 int	ft_case_ra_rrb(t_list *a, t_list *b, int c)
 {
 	int	i;
@@ -86,17 +55,6 @@ int	ft_case_ra_rrb(t_list *a, t_list *b, int c)
 	if (ft_find_right_pos(b, c) > 0)
 		i = ft_lstsize(b) - ft_find_right_pos(b, c);
 	i = ft_num_pos(a, c) + i;
-	return (i);
-}
-
-int	ft_case_ra_rrb2(t_list *a, t_list *b, int c)
-{
-	int	i;
-
-	i = 0;
-	if (ft_find_right_pos2(a, c) > 0)
-		i = ft_lstsize(a) - ft_find_right_pos2(a, c);
-	i = ft_num_pos(b, c) + i;
 	return (i);
 }
 
@@ -111,8 +69,6 @@ int	ft_apply_ra_rb(t_list **a, t_list **b, int c)
 	ft_pb(a, b);
 	return (-1);
 }
-// # TODO : add apply 2
-
 
 int	ft_apply_ra_rrb(t_list **a, t_list **b, int c)
 {
@@ -202,44 +158,45 @@ void	ft_sort_opti(t_list **a, t_list **b)
 	ft_pb(a, b);
 	ft_sort_till_3_remains(a, b);
 	ft_sort_three(a);
+	ft_sort_till_empty(a, b);
 }
 
-// int	main (int argc, char **argv)
-// {
-// 	t_list	*list = ft_linked_list(argc, argv);
-// 	t_list	*list2 = NULL;
-// 	t_list	*current = list;
+int	main (int argc, char **argv)
+{
+	t_list	*list = ft_linked_list(argc, argv);
+	t_list	*list2 = NULL;
+	t_list	*current = list;
 
-// 	ft_printf("BEFORE SORTING\n");
-// 	ft_printf("==================\n");
-// 	while (current)
-// 	{
-// 		ft_printf("%d -> ", current->content);
-// 		current = current->next;
-// 	}
-// 	ft_printf("%s\n", current);
+	ft_printf("BEFORE SORTING\n");
+	ft_printf("==================\n");
+	while (current)
+	{
+		ft_printf("%d -> ", current->content);
+		current = current->next;
+	}
+	ft_printf("%s\n", current);
 
-// 	ft_sort_opti(&list, &list2);
+	ft_sort_opti(&list, &list2);
 
-// 	current = list;
+	current = list;
 
-// 	ft_printf("AFTER SORTING IN STACK A\n");
-// 	ft_printf("==================\n");
-// 	while (current)
-// 	{
-// 		ft_printf("%d -> ", current->content);
-// 		current = current->next;
-// 	}
-// 	ft_printf("%s\n", current);
+	ft_printf("AFTER SORTING IN STACK A\n");
+	ft_printf("==================\n");
+	while (current)
+	{
+		ft_printf("%d -> ", current->content);
+		current = current->next;
+	}
+	ft_printf("%s\n", current);
 
-// 	current = list2;
+	current = list2;
 
-// 	ft_printf("AFTER SORTING IN STACK B\n");
-// 	ft_printf("==================\n");
-// 	while (current)
-// 	{
-// 		ft_printf("%d -> ", current->content);
-// 		current = current->next;
-// 	}
-// 	ft_printf("%s\n", current);
-// }
+	ft_printf("AFTER SORTING IN STACK B\n");
+	ft_printf("==================\n");
+	while (current)
+	{
+		ft_printf("%d -> ", current->content);
+		current = current->next;
+	}
+	ft_printf("%s\n", current);
+}

@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2024/01/03 15:13:23 by vopekdas         ###   ########.fr        #
+#    Updated: 2024/01/03 15:40:03 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SOURCES =  checking_errors.c \
 			sort_three.c \
 			sort_five.c \
 			ft_strcmp.c \
+			opti_push_to_a.c \
 
 LIBFT_PATH = Libft
 
