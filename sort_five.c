@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 11:39:40 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/02 15:49:20 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/03 13:16:06 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,26 @@ int	ft_find_right_pos(t_list *a, int c)
 	if (c > ft_find_biggest(a) || c < ft_find_smaller(a))
 		return (ft_num_pos(a, ft_find_biggest(a)));
 	while (a->content < c || next->content > c)
+	{
+		a = a->next;
+		next = a->next;
+		i++;
+	}
+	return (i);
+}
+
+int	ft_find_right_pos2(t_list *a, int c)
+{
+	int		i;
+	t_list	*next;
+
+	i = 1;
+	next = a->next;
+	if (c < a->content && c > ft_lstlast(a)->content)
+		return (0);
+	if (c > ft_find_biggest(a) || c < ft_find_smaller(a))
+		return (ft_num_pos(a, ft_find_smaller(a)));
+	while (a->content > c || next->content < c)
 	{
 		a = a->next;
 		next = a->next;

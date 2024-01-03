@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:10:39 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/11 17:08:40 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:22:27 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,18 @@ int	ft_check_not_int(int argc, char **argv)
 	return (0);
 }
 
-int	ft_check_bigger_than_int(int argc, char **argv)
+int	ft_check_over_under_int(int argc, char **argv)
 {
-	int	i;
+	int		i;
+	int		res;
+	char	*str;
 
 	i = 1;
 	while (i < argc)
 	{
-		if (ft_atoi(argv[i]) < 0 && ft_strlen(argv[i]) > 11)
-			return (1);
-		if (ft_atoi(argv[i]) > 0 && ft_strlen(argv[i]) > 10)
-			return (1);
-		if ((ft_atoi(argv[i]) > INT_MAX) || ((ft_atoi(argv[i]) < INT_MIN)))
+		res = ft_atoi(argv[i]);
+		str = ft_itoa(res);
+		if (ft_strcmp(argv[i], str) != 0)
 			return (1);
 		i++;
 	}
