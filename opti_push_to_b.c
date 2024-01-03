@@ -63,9 +63,9 @@ int	ft_apply_ra_rb(t_list **a, t_list **b, int c)
 	while ((*a)->content != c && ft_find_right_pos(*b, c) > 0)
 		ft_rr(a, b);
 	while ((*a)->content != c)
-		ft_ra(a);
+		ft_ra(a, 1);
 	while (ft_find_right_pos(*b, c) > 0)
-		ft_rb(b);
+		ft_rb(b, 1);
 	ft_pb(a, b);
 	return (-1);
 }
@@ -73,9 +73,9 @@ int	ft_apply_ra_rb(t_list **a, t_list **b, int c)
 int	ft_apply_ra_rrb(t_list **a, t_list **b, int c)
 {
 	while ((*a)->content != c)
-		ft_ra(a);
+		ft_ra(a, 1);
 	while (ft_find_right_pos(*b, c) > 0)
-		ft_rrb(b);
+		ft_rrb(b, 1);
 	ft_pb(a, b);
 	return (-1);
 }
@@ -84,18 +84,18 @@ int	ft_apply_rra_rrb(t_list **a, t_list **b, int c)
 	while (((*a)->content != c) && (ft_find_right_pos(*b, c) > 0))
 		ft_rrr(a, b);
 	while ((*a)->content != c)
-		ft_rra(a);
+		ft_rra(a, 1);
 	while (ft_find_right_pos(*b, c) > 0)
-		ft_rrb(b);
+		ft_rrb(b, 1);
 	ft_pb(a, b);
 	return (-1);
 }
 int	ft_apply_rra_rb(t_list **a, t_list **b, int c)
 {
 	while ((*a)->content != c)
-		ft_rra(a);
+		ft_rra(a, 1);
 	while (ft_find_right_pos(*b, c) > 0)
-		ft_rb(b);
+		ft_rb(b, 1);
 	ft_pb(a, b);
 	return (-1);
 }
@@ -132,7 +132,7 @@ void	ft_sort_till_3_remains(t_list **a, t_list **b)
 	int		i;
 	t_list	*current;
 
-	while (ft_lstsize(*a) > 3)
+	while (ft_lstsize(*a) > 3 && ft_check_sorted(a) == 1)
 	{
 		current = *a;
 		i = ft_which_move_b(*a, *b);
@@ -154,11 +154,22 @@ void	ft_sort_till_3_remains(t_list **a, t_list **b)
 
 void	ft_sort_opti(t_list **a, t_list **b)
 {
+	int smallest;
+	int	pos;
+
+	smallest = ft_find_smaller(*a);
+	pos = ft_num_pos(*a, smallest);
 	ft_pb(a, b);
 	ft_pb(a, b);
 	ft_sort_till_3_remains(a, b);
 	ft_sort_three(a);
 	ft_sort_till_empty(a, b);
+	if (pos < ft_lstsize(*a) / 2)
+		while ((*a)->content != ft_find_smaller(*a))
+			ft_ra(a, 1);
+	else
+		while ((*a)->content != ft_find_smaller(*a))
+			ft_rra(a, 1);
 }
 
 int	main (int argc, char **argv)

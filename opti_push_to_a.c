@@ -28,9 +28,9 @@ int	ft_case_rra_rb2(t_list	*a, t_list *b, int c)
 	int	i;
 
 	i = 0;
-	if (ft_num_pos(b, c) > 0)
-		i = ft_lstsize(b) - ft_num_pos(b, c);
-	i = ft_find_right_pos2(a, c) + i;
+	if (ft_find_right_pos2(a, c) > 0)
+		i = ft_lstsize(a) - ft_find_right_pos2(a, c);
+	i = ft_num_pos(b, c) + i;
 	return (i);
 }
 int	ft_case_rra_rrb2(t_list *a, t_list *b, int c)
@@ -49,52 +49,52 @@ int	ft_case_ra_rrb2(t_list *a, t_list *b, int c)
 	int	i;
 
 	i = 0;
-	if (ft_find_right_pos2(a, c) > 0)
-		i = ft_lstsize(a) - ft_find_right_pos2(a, c);
-	i = ft_num_pos(b, c) + i;
+	if (ft_num_pos(b, c) > 0)
+		i = ft_lstsize(b) - ft_num_pos(b, c);
+	i = ft_find_right_pos2(a, c) + i;
 	return (i);
 }
 
-int	ft_apply_rb_ra(t_list **a, t_list **b, int c)
+int	ft_apply_ra_rb2(t_list **a, t_list **b, int c)
 {
 	while ((*b)->content != c && ft_find_right_pos2(*a, c) > 0)
 		ft_rr(a, b);
 	while ((*b)->content != c)
-		ft_rb(b);
+		ft_rb(b, 1);
 	while (ft_find_right_pos2(*a, c) > 0)
-		ft_ra(a);
+		ft_ra(a, 1);
 	ft_pa(b, a);
 	return (-1);
 }
 
-int	ft_apply_rb_rra(t_list **a, t_list **b, int c)
+int	ft_apply_rra_rb2(t_list **a, t_list **b, int c)
 {
+	while (ft_find_right_pos2(*a, c) > 0)
+		ft_rra(a, 1);
 	while ((*b)->content != c)
-		ft_rb(b);
-	while (ft_find_right_pos(*a, c) > 0)
-		ft_rra(a);
+		ft_rb(b, 1);
 	ft_pa(b, a);
 	return (-1);
 }
 
-int	ft_apply_rrb_rra(t_list **a, t_list **b, int c)
+int	ft_apply_rra_rrb2(t_list **a, t_list **b, int c)
 {
 	while (((*b)->content != c) && (ft_find_right_pos2(*a, c) > 0))
 		ft_rrr(a, b);
 	while ((*b)->content != c)
-		ft_rrb(b);
+		ft_rrb(b, 1);
 	while (ft_find_right_pos2(*a, c) > 0)
-		ft_rra(a);
+		ft_rra(a, 1);
 	ft_pa(b, a);
 	return (-1);
 }
 
-int	ft_apply_rrb_ra(t_list **a, t_list **b, int c)
+int	ft_apply_ra_rrb2(t_list **a, t_list **b, int c)
 {
-	while ((*b)->content != c)
-		ft_rrb(b);
 	while (ft_find_right_pos2(*a, c) > 0)
-		ft_ra(a);
+		ft_ra(a, 1);
+	while ((*b)->content != c)
+		ft_rrb(b, 1);
 	ft_pa(b, a);
 	return (-1);
 }
@@ -105,7 +105,7 @@ int	ft_which_move_a(t_list *a, t_list *b)
 	int		cost;
 	int 	move;
 
-	current = a;
+	current = b;
 	cost = ft_case_rra_rrb2(a, b, current->content);
 	move = 0;
 	while (current)
@@ -139,13 +139,13 @@ void	ft_sort_till_empty(t_list **a, t_list **b)
 		while (i >= 0)
 		{
 			if (i == ft_case_ra_rb2(*a, *b, current->content))
-				i = ft_apply_rb_ra(a, b, current->content);
+				i = ft_apply_ra_rb2(a, b, current->content);
 			else if (i == ft_case_ra_rrb2(*a, *b, current->content))
-				i = ft_apply_rb_rra(a, b, current->content);
+				i = ft_apply_ra_rrb2(a, b, current->content);
 			else if (i == ft_case_rra_rb2(*a, *b, current->content))
-				i = ft_apply_rrb_ra(a, b, current->content);
+				i = ft_apply_rra_rb2(a, b, current->content);
 			else if (i == ft_case_rra_rrb2(*a, *b, current->content))
-				i = ft_apply_rrb_rra(a, b, current->content);
+				i = ft_apply_rra_rrb2(a, b, current->content);
 			else
 				current = current->next;
 		}

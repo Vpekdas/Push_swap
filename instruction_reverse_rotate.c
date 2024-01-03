@@ -14,7 +14,7 @@
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
-void	ft_rra(t_list **list)
+void	ft_rra(t_list **list, int t)
 {
 	int		temp;
 	t_list	*current;
@@ -30,10 +30,11 @@ void	ft_rra(t_list **list)
 		current->content = temp;
 		current = current->next;
 	}
-	ft_printf("rra\n");
+	if (t == 1)
+		ft_printf("rra\n");
 }
 
-void	ft_rrb(t_list **list)
+void	ft_rrb(t_list **list, int t)
 {
 	int		temp;
 	t_list	*current;
@@ -49,14 +50,15 @@ void	ft_rrb(t_list **list)
 		current->content = temp;
 		current = current->next;
 	}
-	ft_printf("rrb\n");
+	if (t == 1)
+		ft_printf("rrb\n");
 }
 
 void	ft_rrr(t_list **list, t_list **list2)
 {
 	if (!list || !(*list2))
 		return ;
-	ft_rra(list);
-	ft_rrb(list2);
+	ft_rra(list, 0);
+	ft_rrb(list2, 0);
 	ft_printf("rrr\n");
 }

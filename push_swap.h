@@ -19,7 +19,7 @@
 
 int		ft_strcmp(char *s1, char *s2);
 int		ft_check_not_int(int argc, char **argv);
-int		ft_check_bigger_than_int(int argc, char **argv);
+int		ft_check_over_under_int(int argc, char **argv);
 int		ft_check_is_not_duplicate(int argc, char **argv);
 int		ft_check_sorted(t_list	**a);
 
@@ -27,16 +27,16 @@ t_list	*ft_linked_list(int argc, char **argv);
 void	ft_pa(t_list **a, t_list **b);
 void	ft_pb(t_list **b, t_list **a);
 
-void	ft_rra(t_list **list);
-void	ft_rrb(t_list **list);
+void	ft_rra(t_list **list, int t);
+void	ft_rrb(t_list **list, int t);
 void	ft_rrr(t_list **list, t_list **list2);
 
-void	ft_ra(t_list **list);
-void	ft_rb(t_list **list);
+void	ft_ra(t_list **list, int t);
+void	ft_rb(t_list **list, int t);
 void	ft_rr(t_list **list, t_list **list2);
 
-void	ft_sa(t_list **list);
-void	ft_sb(t_list **list);
+void	ft_sa(t_list **list, int t);
+void	ft_sb(t_list **list, int t);
 void	ft_ss(t_list **list, t_list **list2);
 
 int		ft_find_biggest(t_list *a);
