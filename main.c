@@ -6,13 +6,16 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:14:10 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/04 16:51:44 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/04 16:56:33 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Libft/libft.h"
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
+
+// TODO: - Write if statements for the different cases of argc(sort 2, 3 or more numbers)
+//		 - Which algo should be called ?
 
 int	main(int ac, char **av)
 {
