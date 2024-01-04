@@ -6,24 +6,27 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2024/01/03 15:40:03 by vopekdas         ###   ########.fr        #
+#    Updated: 2024/01/04 15:27:29 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SOURCES =  checking_errors.c \
+SOURCES =  apply_push_to_a.c \
+			apply_push_to_b.c \
+			case_push_to_a.c \
+			case_push_to_b.c \
+			checking_functions.c \
 			create_list_argv.c \
 			instruction_push.c \
 			instruction_reverse_rotate.c \
 			instruction_rotate.c \
 			instruction_swap.c \
-			opti_push_to_b.c \
-			sort_three.c \
-			sort_five.c \
-			ft_strcmp.c \
-			opti_push_to_a.c \
-
+			main.c \
+			sorting_algo.c \
+			utils_functions.c \
+			utils_functions2.c \
+			
 LIBFT_PATH = Libft
 
 FT_PRINTF_PATH = ft_printf
