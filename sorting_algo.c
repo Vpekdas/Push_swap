@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:06:59 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/04 15:26:53 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/04 15:52:42 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_sort_till_3_remains(t_list **a, t_list **b)
 	int		i;
 	t_list	*current;
 
-	while (ft_lstsize(*a) > 3 && ft_check_sorted(a) == 1)
+	while (ft_lstsize(*a) > 3 && ft_check_sorted(*a) == 1)
 	{
 		current = *a;
 		i = ft_which_move_b(*a, *b);
@@ -94,7 +94,7 @@ void	ft_sort_till_empty(t_list **a, t_list **b)
 
 void	ft_sort_opti(t_list **a, t_list **b)
 {
-	int smallest;
+	int	smallest;
 	int	pos;
 
 	smallest = ft_find_smaller(*a);

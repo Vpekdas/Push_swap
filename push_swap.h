@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:18:19 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/04 15:24:07 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/04 16:51:11 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,16 @@ void	ft_sa(t_list **list, int t);
 void	ft_sb(t_list **list, int t);
 void	ft_ss(t_list **list, t_list **list2);
 
-int		ft_check_not_int(int argc, char **argv);
-int		ft_check_over_under_int(int argc, char **argv);
-int		ft_check_is_not_duplicate(int argc, char **argv);
-int		ft_check_sorted(t_list	**a);
+int		ft_check_not_int(int ac, char **av);
+int		ft_check_over_under_int(int ac, char **av);
+int		ft_check_is_not_duplicate(int ac, char **av);
+int		ft_check_sorted(t_list	*a);
+int		ft_overall_check(int ac, char **av);
+int		ft_check_not_int_split(int ac, char **av);
+int		ft_check_over_under_int_split(int ac, char **av);
+int		ft_check_is_not_duplicate_split(int ac, char **av);
+int		ft_check_sorted_split(t_list	*a);
+int		ft_overall_check_split(int ac, char **av);
 
 int		ft_find_biggest(t_list *a);
 int		ft_find_smaller(t_list *a);
@@ -43,7 +49,9 @@ int		ft_num_pos(t_list *a, int num);
 int		ft_find_right_pos(t_list *a, int c);
 int		ft_find_right_pos2(t_list *a, int c);
 int		ft_strcmp(char *s1, char *s2);
-t_list	*ft_linked_list(int argc, char **argv);
+t_list	*ft_linked_list(int ac, char **av);
+int		ft_count_words(char **str);
+t_list	*ft_linked_list_split(int ac, char **av);
 
 int		ft_which_move_a(t_list *a, t_list *b);
 int		ft_case_ra_rb(t_list *a, t_list *b, int c);

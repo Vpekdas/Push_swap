@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2024/01/04 15:27:29 by vopekdas         ###   ########.fr        #
+#    Updated: 2024/01/04 16:51:23 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SOURCES =  apply_push_to_a.c \
 			case_push_to_a.c \
 			case_push_to_b.c \
 			checking_functions.c \
+			checking_functions_split.c \
 			create_list_argv.c \
 			instruction_push.c \
 			instruction_reverse_rotate.c \

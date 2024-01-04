@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checking_functions.c                               :+:      :+:    :+:   */
+/*   checking_functions_split.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 17:10:39 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/04 15:48:18 by vopekdas         ###   ########.fr       */
+/*   Created: 2024/01/04 16:49:52 by vopekdas          #+#    #+#             */
+/*   Updated: 2024/01/04 16:52:05 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
-int	ft_check_not_int(int ac, char **av)
+int	ft_check_not_int_split(int ac, char **av)
 {
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	j = 0;
 	while (i < ac)
 	{
@@ -36,14 +36,14 @@ int	ft_check_not_int(int ac, char **av)
 }
 
 
-int	ft_check_over_under_int(int ac, char **av)
+int	ft_check_over_under_int_split(int ac, char **av)
 {
 	int		i;
 	int		res;
 	char	*str;
 	char 	*arg;
 
-    i = 1;
+    i = 0;
 	while (i < ac)
 	{
 		res = ft_atoi(av[i]);
@@ -61,12 +61,12 @@ int	ft_check_over_under_int(int ac, char **av)
 	return (0);
 }
 
-int	ft_check_is_not_duplicate(int ac, char **av)
+int	ft_check_is_not_duplicate_split(int ac, char **av)
 {
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	j = 0;
 	while (i < ac)
 	{
@@ -82,7 +82,7 @@ int	ft_check_is_not_duplicate(int ac, char **av)
 	return (0);
 }
 
-int	ft_check_sorted(t_list	*a)
+int	ft_check_sorted_split(t_list	*a)
 {
 	t_list	*current;
 
@@ -99,13 +99,13 @@ int	ft_check_sorted(t_list	*a)
 	return (0);
 }
 
-int	ft_overall_check(int ac, char **av)
+int	ft_overall_check_split(int ac, char **av)
 {
-	if (ft_check_not_int(ac, av))
+	if (ft_check_not_int_split(ac, av))
 		return (1);
-	if (ft_check_over_under_int(ac, av))
+	if (ft_check_over_under_int_split(ac, av))
 		return (1);
-	if (ft_check_is_not_duplicate(ac, av))
+	if (ft_check_is_not_duplicate_split(ac, av))
 		return (1);
 	return (0);
 }
