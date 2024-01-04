@@ -35,6 +35,8 @@ int	ft_check_not_int(int argc, char **argv)
 	return (0);
 }
 
+// TODO handle -0000000001
+
 int	ft_check_over_under_int(int argc, char **argv)
 {
 	int		i;
@@ -46,6 +48,10 @@ int	ft_check_over_under_int(int argc, char **argv)
 	{
 		res = ft_atoi(argv[i]);
 		str = ft_itoa(res);
+		ft_printf("res: %d\n", res);
+		ft_printf("str: %s\n", str);
+		while (*argv[i] && *argv[i] == '0')
+			argv[i]++;
 		if (ft_strcmp(argv[i], str) != 0)
 			return (1);
 		i++;
@@ -72,4 +78,8 @@ int	ft_check_is_not_duplicate(int argc, char **argv)
 		i++;
 	}
 	return (0);
+}
+int	main (int ac, char **av)
+{
+	ft_printf("check_not_int: %d\n", ft_check_over_under_int(ac, av));
 }
