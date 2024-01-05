@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:18:19 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 15:05:05 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:53:43 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,6 @@ void	ft_sort_three(t_list **a);
 void	ft_sort_till_3_remains(t_list **a, t_list **b);
 void	ft_sort_till_empty(t_list **a, t_list **b);
 void	ft_sort_opti(t_list **a, t_list **b);
+void	ft_sort_list(t_list **a, t_list **b);
 
 #endif 

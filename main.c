@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:14:10 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 15:04:24 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:55:03 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
+void	ft_sort_list(t_list **a, t_list **b)
+{
+	if (ft_lstsize(*a) == 1)
+		return ;
+	else if (ft_lstsize(*a) == 2)
+		ft_sort_two(a);
+	else if (ft_lstsize(*a) == 3)
+		ft_sort_three(a);
+	else
+		ft_sort_opti(a, b);
+}
 
 int	main(int ac, char **av)
 {
@@ -33,29 +44,14 @@ int	main(int ac, char **av)
 		if (ft_overall_check_split(words, str) == 1)
 			return (ft_printf("Error\n"));
 		a = ft_linked_list_split(words, str);
-		if (ft_lstsize(a) == 1)
-			return (0);
-		else if (ft_lstsize(a) == 2)
-			ft_sort_two(&a);
-		else if (ft_lstsize(a) == 3)
-			ft_sort_three(&a);
-		else
-			ft_sort_opti(&a, &b);
 	}
 	else if (ac > 2)
 	{
 		if (ft_overall_check(ac, av) == 1)
 			return (ft_printf("Error\n"));
 		a = ft_linked_list(ac, av);
-		if (ft_lstsize(a) == 1)
-			return (0);
-		else if (ft_lstsize(a) == 2)
-			ft_sort_two(&a);
-		else if (ft_lstsize(a) == 3)
-			ft_sort_three(&a);
-		else
-			ft_sort_opti(&a, &b);
 	}
+	ft_sort_list(&a, &b);
 	return (0);
 }
 
