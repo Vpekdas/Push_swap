@@ -6,13 +6,24 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:06:59 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/04 15:52:42 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:42:50 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Libft/libft.h"
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
+
+void	ft_sort_two(t_list **list)
+{
+	int	top;
+	int	bot;
+
+	top = (*list)->content;
+	bot = (*list)->next->content;
+	if (top > bot)
+		ft_sa(list, 1);
+}
 
 void	ft_sort_three(t_list **list)
 {

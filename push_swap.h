@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:18:19 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/04 16:51:11 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:52:31 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int		ft_num_pos(t_list *a, int num);
 int		ft_find_right_pos(t_list *a, int c);
 int		ft_find_right_pos2(t_list *a, int c);
 int		ft_strcmp(char *s1, char *s2);
+
 t_list	*ft_linked_list(int ac, char **av);
 int		ft_count_words(char **str);
 t_list	*ft_linked_list_split(int ac, char **av);
@@ -75,6 +76,7 @@ int		ft_apply_rra_rb2(t_list **a, t_list **b, int c);
 int		ft_apply_rra_rrb2(t_list **a, t_list **b, int c);
 int		ft_apply_ra_rrb2(t_list **a, t_list **b, int c);
 
+void	ft_sort_two(t_list **list);
 void	ft_sort_three(t_list **list);
 void	ft_sort_till_3_remains(t_list **a, t_list **b);
 void	ft_sort_till_empty(t_list **a, t_list **b);

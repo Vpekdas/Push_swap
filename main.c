@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:14:10 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/04 16:56:33 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:49:27 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,7 @@
 // TODO: - Write if statements for the different cases of argc(sort 2, 3 or more numbers)
 //		 - Which algo should be called ?
 
-int	main(int ac, char **av)
-{
-	t_list	*a;
-	t_list	*b;
-	int		words;
-	char	**str;
 
-	words = 0;
-	b = NULL;
-	if (ac < 2)
-		return (ft_printf("Error\n"));
-	else if (ac == 2)
-	{
-		str = ft_split(av[1], ' ');
-		words = ft_count_words(str);
-		if (ft_overall_check_split(words, str) == 1)
-			return (ft_printf("Error\n"));
-		a = ft_linked_list_split(words, str);
-	}
-	return (0);
-}
 
 
 // int	main (int argc, char **argv)
