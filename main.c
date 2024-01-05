@@ -6,13 +6,44 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:14:10 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 15:55:03 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:24:24 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Libft/libft.h"
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
+
+void	ft_free_split(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
+
+void	ft_free_list(t_list **a, t_list **b)
+{
+	t_list	*tmp;
+
+	while (*a)
+	{
+		tmp = (*a);
+		(*a) = (*a)->next;
+		free(tmp);
+	}
+	while (*b)
+	{
+		tmp = (*b);
+		(*b) = (*b)->next;
+		free(tmp);
+	}
+}
 
 void	ft_sort_list(t_list **a, t_list **b)
 {
@@ -42,8 +73,12 @@ int	main(int ac, char **av)
 		str = ft_split(av[1], ' ');
 		words = ft_count_words(str);
 		if (ft_overall_check_split(words, str) == 1)
+		{
+			ft_free_split(str);
 			return (ft_printf("Error\n"));
+		}
 		a = ft_linked_list_split(words, str);
+		ft_free_split(str);
 	}
 	else if (ac > 2)
 	{
@@ -52,6 +87,7 @@ int	main(int ac, char **av)
 		a = ft_linked_list(ac, av);
 	}
 	ft_sort_list(&a, &b);
+	ft_free_list(&a, &b);
 	return (0);
 }
 

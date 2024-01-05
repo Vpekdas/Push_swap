@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:18:19 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 15:53:43 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:21:09 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int		ft_strcmp(char *s1, char *s2);
 t_list	*ft_linked_list(int ac, char **av);
 t_list	*ft_linked_list_split(int ac, char **av);
 int		ft_count_words(char **str);
+void	ft_free_split(char **str);
+void	ft_free_list(t_list **a, t_list **b);
 
 int		ft_which_move_a(t_list *a, t_list *b);
 int		ft_case_ra_rb(t_list *a, t_list *b, int c);

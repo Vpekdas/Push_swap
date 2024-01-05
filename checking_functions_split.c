@@ -6,13 +6,14 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:49:52 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/04 16:52:05 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:22:09 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Libft/libft.h"
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
+#include <stdlib.h>
 
 int	ft_check_not_int_split(int ac, char **av)
 {
@@ -55,7 +56,11 @@ int	ft_check_over_under_int_split(int ac, char **av)
 		while (*arg && *arg == '0')
 			arg++;
 		if (ft_strcmp(arg, str + (*str == '-')) != 0)
+		{
+			free(str);
 			return (1);
+		}
+		free(str);
 		i++;
 	}
 	return (0);
