@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:06:59 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 15:03:30 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:37:54 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	ft_sort_three(t_list **a)
 	else if (top < mid && mid > bot && bot < top)
 		ft_rra(a, 1);
 }
-
 
 void	ft_sort_till_3_remains(t_list **a, t_list **b)
 {
@@ -122,4 +121,3 @@ void	ft_sort_opti(t_list **a, t_list **b)
 		while ((*a)->content != ft_find_smaller(*a))
 			ft_rra(a, 1);
 }
-

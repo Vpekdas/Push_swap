@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 14:32:33 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 15:04:19 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:33:38 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,3 @@ t_list	*ft_linked_list_split(int ac, char **av)
 	}
 	return (new_list);
 }
-

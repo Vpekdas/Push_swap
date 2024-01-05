@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:49:52 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 17:22:09 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:36:18 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,18 @@ int	ft_check_not_int_split(int ac, char **av)
 	return (0);
 }
 
-
 int	ft_check_over_under_int_split(int ac, char **av)
 {
 	int		i;
 	int		res;
 	char	*str;
-	char 	*arg;
+	char	*arg;
 
-    i = 0;
+	i = 0;
 	while (i < ac)
 	{
 		res = ft_atoi(av[i]);
 		str = ft_itoa(res);
-
 		arg = av[i];
 		if (*arg == '-')
 			arg++;

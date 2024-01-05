@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:02:08 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/04 15:02:54 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:39:26 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,12 @@ int	ft_case_ra_rrb2(t_list *a, t_list *b, int c)
 	i = ft_find_right_pos2(a, c) + i;
 	return (i);
 }
+
 int	ft_which_move_a(t_list *a, t_list *b)
 {
 	t_list	*current;
 	int		cost;
-	int 	move;
+	int		move;
 
 	current = b;
 	cost = ft_case_rra_rrb2(a, b, current->content);
@@ -74,10 +75,10 @@ int	ft_which_move_a(t_list *a, t_list *b)
 		move = ft_case_ra_rrb2(a, b, current->content);
 		if (cost > move)
 			cost = move;
-		move = ft_case_rra_rb2(a, b ,current->content);
+		move = ft_case_rra_rb2(a, b, current->content);
 		if (cost > move)
 			cost = move;
-		move = ft_case_rra_rrb2(a, b ,current->content);
+		move = ft_case_rra_rrb2(a, b, current->content);
 		if (cost > move)
 			cost = move;
 		current = current->next;

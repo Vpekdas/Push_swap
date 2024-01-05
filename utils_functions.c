@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:16:16 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/04 15:18:16 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:37:13 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,3 @@ int	ft_find_right_pos(t_list *a, int c)
 	}
 	return (i);
 }
-

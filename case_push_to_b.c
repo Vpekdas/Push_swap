@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:00:20 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/04 15:04:00 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:40:06 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,12 @@ int	ft_case_ra_rrb(t_list *a, t_list *b, int c)
 	i = ft_num_pos(a, c) + i;
 	return (i);
 }
+
 int	ft_which_move_b(t_list *a, t_list *b)
 {
 	t_list	*current;
 	int		cost;
-	int 	move;
+	int		move;
 
 	current = a;
 	cost = ft_case_rra_rrb(a, b, current->content);
@@ -74,10 +75,10 @@ int	ft_which_move_b(t_list *a, t_list *b)
 		move = ft_case_ra_rrb(a, b, current->content);
 		if (cost > move)
 			cost = move;
-		move = ft_case_rra_rb(a, b ,current->content);
+		move = ft_case_rra_rb(a, b, current->content);
 		if (cost > move)
 			cost = move;
-		move = ft_case_rra_rrb(a, b ,current->content);
+		move = ft_case_rra_rrb(a, b, current->content);
 		if (cost > move)
 			cost = move;
 		current = current->next;

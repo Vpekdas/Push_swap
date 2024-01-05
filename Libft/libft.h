@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:25:45 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/12 11:16:07 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:34:04 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <stdint.h>
 
-int	ft_atoi(const char *str);
+int			ft_atoi(const char *str);
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t count, size_t size);
 int			ft_isalnum(int c);
