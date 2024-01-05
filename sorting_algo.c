@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:06:59 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 14:42:50 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:03:30 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,42 @@
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
-void	ft_sort_two(t_list **list)
+void	ft_sort_two(t_list **a)
 {
 	int	top;
 	int	bot;
 
-	top = (*list)->content;
-	bot = (*list)->next->content;
+	top = (*a)->content;
+	bot = (*a)->next->content;
 	if (top > bot)
-		ft_sa(list, 1);
+		ft_sa(a, 1);
 }
 
-void	ft_sort_three(t_list **list)
+void	ft_sort_three(t_list **a)
 {
 	int	top;
 	int	mid;
 	int	bot;
 
-	top = (*list)->content;
-	mid = (*list)->next->content;
-	bot = (*list)->next->next->content;
+	top = (*a)->content;
+	mid = (*a)->next->content;
+	bot = (*a)->next->next->content;
 	if (top > mid && mid < bot && bot > top)
-		ft_sa(list, 1);
-	if (top > mid && mid > bot && bot < top)
+		ft_sa(a, 1);
+	else if (top > mid && mid > bot && bot < top)
 	{
-		ft_sa(list, 1);
-		ft_rra(list, 1);
+		ft_sa(a, 1);
+		ft_rra(a, 1);
 	}
-	if (top > mid && mid < bot && bot < top)
-		ft_ra(list, 1);
-	if (top < mid && mid > bot && bot > top)
+	else if (top > mid && mid < bot && bot < top)
+		ft_ra(a, 1);
+	else if (top < mid && mid > bot && bot > top)
 	{
-		ft_sa(list, 1);
-		ft_ra(list, 1);
+		ft_sa(a, 1);
+		ft_ra(a, 1);
 	}
-	if (top < mid && mid > bot && bot < top)
-		ft_rra(list, 1);
+	else if (top < mid && mid > bot && bot < top)
+		ft_rra(a, 1);
 }
 
 
