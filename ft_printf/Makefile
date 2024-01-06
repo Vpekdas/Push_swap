@@ -6,9 +6,19 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2023/12/07 16:47:23 by vopekdas         ###   ########.fr        #
+#    Updated: 2024/01/06 16:57:17 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+LIGHT_RED=\033[1;31m
+LIGHT_GREEN=\033[1;32m
+LIGHT_YELLOW=\033[1;33m
+LIGHT_BLUE=\033[1;34m
+LIGHT_MAGENTA=\033[1;35m
+LIGHT_CYAN=\033[1;36m
+WHITE=\033[1;37m
+LIGHT_GRAY=\033[0;37m
+DARK_GRAY=\033[1;30m
 
 NAME = libftprintf.a
 
