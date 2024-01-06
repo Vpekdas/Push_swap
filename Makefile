@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2024/01/06 17:14:51 by vopekdas         ###   ########.fr        #
+#    Updated: 2024/01/06 18:00:38 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SOURCES =  apply_push_to_a.c \
 			instruction_swap.c \
 			main.c \
 			sorting_algo.c \
+			sorting_algo2.c \
 			utils_functions.c \
 			utils_functions2.c \
 			

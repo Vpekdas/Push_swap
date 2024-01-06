@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:14:10 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/06 14:33:04 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:29:34 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,13 @@ void	ft_sort_list(t_list **a, t_list **b)
 		ft_sort_two(a);
 	else if (ft_lstsize(*a) == 3)
 		ft_sort_three(a);
+	else if (ft_lstsize(*a) == 4)
+		ft_sort_four(a, b);
 	else
 		ft_sort_opti(a, b);
 }
 
-int	main(int ac, char **av)
+int	test(int ac, char **av)
 {
 	t_list	*a;
 	t_list	*b;
@@ -88,43 +90,43 @@ int	main(int ac, char **av)
 	return (ft_free_list(&a, &b));
 }
 
-// int	main (int argc, char **argv)
-// {
-// 	t_list	*list = ft_linked_list(argc, argv);
-// 	t_list	*list2 = NULL;
-// 	t_list	*current = list;
+int	main (int ac, char **av)
+{
+	t_list	*list = ft_linked_list(ac, av);
+	t_list	*list2 = NULL;
+	t_list	*current = list;
 
-// 	ft_printf("BEFORE SORTING\n");
-// 	ft_printf("==================\n");
-// 	while (current)
-// 	{
-// 		ft_printf("%d -> ", current->content);
-// 		current = current->next;
-// 	}
-// 	ft_printf("%s\n", current);
+	ft_printf("BEFORE SORTING\n");
+	ft_printf("==================\n");
+	while (current)
+	{
+		ft_printf("%d -> ", current->content);
+		current = current->next;
+	}
+	ft_printf("%s\n", current);
 
-// 	ft_sort_opti(&list, &list2);
+	ft_sort_four(&list, &list2);
 
-// 	current = list;
+	current = list;
 
-// 	ft_printf("AFTER SORTING IN STACK A\n");
-// 	ft_printf("==================\n");
-// 	while (current)
-// 	{
-// 		ft_printf("%d -> ", current->content);
-// 		current = current->next;
-// 	}
-// 	ft_printf("%s\n", current);
+	ft_printf("AFTER SORTING IN STACK A\n");
+	ft_printf("==================\n");
+	while (current)
+	{
+		ft_printf("%d -> ", current->content);
+		current = current->next;
+	}
+	ft_printf("%s\n", current);
 
-// 	current = list2;
+	current = list2;
 
-// 	ft_printf("AFTER SORTING IN STACK B\n");
-// 	ft_printf("==================\n");
-// 	while (current)
-// 	{
-// 		ft_printf("%d -> ", current->content);
-// 		current = current->next;
-// 	}
-// 	ft_printf("%s\n", current);
-// }
+	ft_printf("AFTER SORTING IN STACK B\n");
+	ft_printf("==================\n");
+	while (current)
+	{
+		ft_printf("%d -> ", current->content);
+		current = current->next;
+	}
+	ft_printf("%s\n", current);
+}
 
