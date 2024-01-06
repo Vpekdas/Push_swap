@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:14:10 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 17:24:24 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/06 14:33:04 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
-void	ft_free_split(char **str)
+int	ft_free_split(char **str)
 {
 	int	i;
 
@@ -25,9 +25,10 @@ void	ft_free_split(char **str)
 		i++;
 	}
 	free(str);
+	return (0);
 }
 
-void	ft_free_list(t_list **a, t_list **b)
+int	ft_free_list(t_list **a, t_list **b)
 {
 	t_list	*tmp;
 
@@ -43,6 +44,7 @@ void	ft_free_list(t_list **a, t_list **b)
 		(*b) = (*b)->next;
 		free(tmp);
 	}
+	return (0);
 }
 
 void	ft_sort_list(t_list **a, t_list **b)
@@ -64,7 +66,6 @@ int	main(int ac, char **av)
 	int		words;
 	char	**str;
 
-	words = 0;
 	b = NULL;
 	if (ac < 2)
 		return (ft_printf("Error\n"));
@@ -73,10 +74,7 @@ int	main(int ac, char **av)
 		str = ft_split(av[1], ' ');
 		words = ft_count_words(str);
 		if (ft_overall_check_split(words, str) == 1)
-		{
-			ft_free_split(str);
-			return (ft_printf("Error\n"));
-		}
+			return (ft_free_split(str), (ft_printf("Error\n")));
 		a = ft_linked_list_split(words, str);
 		ft_free_split(str);
 	}
@@ -87,8 +85,7 @@ int	main(int ac, char **av)
 		a = ft_linked_list(ac, av);
 	}
 	ft_sort_list(&a, &b);
-	ft_free_list(&a, &b);
-	return (0);
+	return (ft_free_list(&a, &b));
 }
 
 // int	main (int argc, char **argv)
