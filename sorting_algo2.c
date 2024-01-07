@@ -25,7 +25,7 @@ void	ft_sort_four(t_list **a, t_list **b)
 	pos = ft_find_right_pos2(*a, (*b)->content);
 	ft_printf("pos = %d\n", pos);
 	if (pos > ft_lstsize(*a) / 2)
-		while (i++ < ft_lstsize(*b))
+		while (i++ < pos)
 			ft_rra(a, 1);
 	else
 		while (i++ < pos)

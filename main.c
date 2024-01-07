@@ -61,7 +61,7 @@ void	ft_sort_list(t_list **a, t_list **b)
 		ft_sort_opti(a, b);
 }
 
-int	test(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_list	*a;
 	t_list	*b;
@@ -90,43 +90,43 @@ int	test(int ac, char **av)
 	return (ft_free_list(&a, &b));
 }
 
-int	main (int ac, char **av)
-{
-	t_list	*list = ft_linked_list(ac, av);
-	t_list	*list2 = NULL;
-	t_list	*current = list;
+// int	main (int ac, char **av)
+// {
+// 	t_list	*list = ft_linked_list(ac, av);
+// 	t_list	*list2 = NULL;
+// 	t_list	*current = list;
 
-	ft_printf("BEFORE SORTING\n");
-	ft_printf("==================\n");
-	while (current)
-	{
-		ft_printf("%d -> ", current->content);
-		current = current->next;
-	}
-	ft_printf("%s\n", current);
+// 	ft_printf("BEFORE SORTING\n");
+// 	ft_printf("==================\n");
+// 	while (current)
+// 	{
+// 		ft_printf("%d -> ", current->content);
+// 		current = current->next;
+// 	}
+// 	ft_printf("%s\n", current);
 
-	ft_sort_four(&list, &list2);
+// 	ft_sort_four(&list, &list2);
 
-	current = list;
+// 	current = list;
 
-	ft_printf("AFTER SORTING IN STACK A\n");
-	ft_printf("==================\n");
-	while (current)
-	{
-		ft_printf("%d -> ", current->content);
-		current = current->next;
-	}
-	ft_printf("%s\n", current);
+// 	ft_printf("AFTER SORTING IN STACK A\n");
+// 	ft_printf("==================\n");
+// 	while (current)
+// 	{
+// 		ft_printf("%d -> ", current->content);
+// 		current = current->next;
+// 	}
+// 	ft_printf("%s\n", current);
 
-	current = list2;
+// 	current = list2;
 
-	ft_printf("AFTER SORTING IN STACK B\n");
-	ft_printf("==================\n");
-	while (current)
-	{
-		ft_printf("%d -> ", current->content);
-		current = current->next;
-	}
-	ft_printf("%s\n", current);
-}
+// 	ft_printf("AFTER SORTING IN STACK B\n");
+// 	ft_printf("==================\n");
+// 	while (current)
+// 	{
+// 		ft_printf("%d -> ", current->content);
+// 		current = current->next;
+// 	}
+// 	ft_printf("%s\n", current);
+// }
 
