@@ -23,7 +23,6 @@ void	ft_sort_four(t_list **a, t_list **b)
 	ft_pb(a, b);
 	ft_sort_three(a);
 	pos = ft_find_right_pos2(*a, (*b)->content);
-	ft_printf("pos = %d\n", pos);
 	if (pos > ft_lstsize(*a) / 2)
 		while (i++ < pos)
 			ft_rra(a, 1);

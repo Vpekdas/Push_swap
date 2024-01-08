@@ -48,7 +48,7 @@ int	ft_check_over_under_int_split(int ac, char **av)
 		res = ft_atoi(av[i]);
 		str = ft_itoa(res);
 
-		if (ft_strcmp(av[i], str != 0))
+		if (ft_strcmp(av[i], str) != 0)
 		{
 			free(str);
 			return (1);
