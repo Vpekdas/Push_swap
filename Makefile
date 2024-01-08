@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2024/01/08 16:24:06 by vopekdas         ###   ########.fr        #
+#    Updated: 2024/01/08 17:29:31 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -153,7 +153,7 @@ bonus: $(BONUS_OBJECTS) $(OBJECTS) libft ft_printf
 
 clean:
 	@echo "$(LIGHT_PURPLE)"
-	$(RM) $(OBJECTS) $(BONUS_OBJECTS) $(MAIN_OBJECT)
+	$(RM) $(OBJECTS) $(BONUS_OBJECTS) $(MAIN_OBJECT) $(BONUS_NAME)
 	cd $(LIBFT_PATH) && make clean
 	cd $(FT_PRINTF_PATH) && make clean
 	@printf "$(LIGHT_RED)Cleaned all object files.\n\033[0m"
