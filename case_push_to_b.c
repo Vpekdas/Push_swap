@@ -31,7 +31,7 @@ int	ft_case_rra_rb(t_list	*a, t_list *b, int c)
 	i = 0;
 	if (ft_num_pos(a, c) > 0)
 		i = ft_lstsize(a) - ft_num_pos(a, c);
-	i = ft_find_right_pos(b, c) + i;
+	i += ft_find_right_pos(b, c);
 	return (i);
 }
 
@@ -54,7 +54,7 @@ int	ft_case_ra_rrb(t_list *a, t_list *b, int c)
 	i = 0;
 	if (ft_find_right_pos(b, c) > 0)
 		i = ft_lstsize(b) - ft_find_right_pos(b, c);
-	i = ft_num_pos(a, c) + i;
+	i += ft_num_pos(a, c);
 	return (i);
 }
 
