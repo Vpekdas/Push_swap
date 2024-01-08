@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:18:19 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/08 17:20:50 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:53:05 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,19 @@ void	ft_ss(t_list **list, t_list **list2, int p);
 int		ft_check_not_int(int ac, char **av);
 int		ft_check_over_under_int(int ac, char **av);
 int		ft_check_is_not_duplicate(int ac, char **av);
-int		ft_check_sorted(t_list	*a);
 int		ft_overall_check(int ac, char **av);
+
 int		ft_check_not_int_split(int ac, char **av);
 int		ft_check_over_under_int_split(int ac, char **av);
 int		ft_check_is_not_duplicate_split(int ac, char **av);
-int		ft_check_sorted_split(t_list	*a);
 int		ft_overall_check_split(int ac, char **av);
+
+int		ft_check_sorted(t_list	*a);
+void	ft_checker_sorted(t_list *a, t_list *b);
+int		ft_check_sorted_split(t_list	*a);
+
+void	ft_checker_read(t_list **a, t_list **b);
+void	ft_checker_read2(t_list **a, t_list **b, char *line);
 
 int		ft_find_biggest(t_list *a);
 int		ft_find_smaller(t_list *a);
