@@ -6,13 +6,13 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:58:57 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/08 11:57:07 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:19:08 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_pa(t_list **a, t_list **b)
+void	ft_pa(t_list **a, t_list **b, int p)
 {
 	t_list	*temp;
 
@@ -22,10 +22,11 @@ void	ft_pa(t_list **a, t_list **b)
 	(*a)->next = *b;
 	*b = *a;
 	*a = temp;
-	ft_printf("pa\n");
+	if (p == PRINT)
+		ft_printf("pa\n");
 }
 
-void	ft_pb(t_list **b, t_list **a)
+void	ft_pb(t_list **b, t_list **a, int p)
 {
 	t_list	*temp;
 
@@ -35,5 +36,6 @@ void	ft_pb(t_list **b, t_list **a)
 	(*b)->next = *a;
 	*a = *b;
 	*b = temp;
-	ft_printf("pb\n");
+	if (p == PRINT)
+		ft_printf("pb\n");
 }

@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:58:29 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/08 16:24:31 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:23:17 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@ void	ft_sort_four(t_list **a, t_list **b)
 	int		i;
 
 	i = 0;
-	ft_pb(a, b);
+	ft_pb(a, b, PRINT);
 	ft_sort_three(a);
 	pos = ft_find_right_pos2(*a, (*b)->content);
 	if (pos > ft_lstsize(*a) / 2)
 		while (i++ < pos)
-			ft_rra(a, 1);
+			ft_rra(a, PRINT);
 	else
 		while (i++ < pos)
-			ft_ra(a, 1);
-	ft_pa(b, a);
+			ft_ra(a, PRINT);
+	ft_pa(b, a, PRINT);
 	while ((*a)->content != ft_find_smaller(*a))
-		ft_ra(a, 1);
+		ft_ra(a, PRINT);
 }
 
 void	ft_sort_list(t_list **a, t_list **b)

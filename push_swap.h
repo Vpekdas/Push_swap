@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:18:19 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/08 16:11:43 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:20:50 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,23 @@
 # include "Libft/libft.h"
 # include "ft_printf/include/ft_printf.h"
 
-void	ft_pa(t_list **a, t_list **b);
-void	ft_pb(t_list **b, t_list **a);
+# define PRINT 1
+# define NO_PRINT 0
 
-void	ft_ra(t_list **list, int t);
-void	ft_rb(t_list **list, int t);
-void	ft_rr(t_list **list, t_list **list2);
+void	ft_pa(t_list **a, t_list **b, int p);
+void	ft_pb(t_list **b, t_list **a, int p);
 
-void	ft_rra(t_list **list, int t);
-void	ft_rrb(t_list **list, int t);
-void	ft_rrr(t_list **list, t_list **list2);
+void	ft_ra(t_list **list, int p);
+void	ft_rb(t_list **list, int p);
+void	ft_rr(t_list **list, t_list **list2, int p);
 
-void	ft_sa(t_list **list, int t);
-void	ft_sb(t_list **list, int t);
-void	ft_ss(t_list **list, t_list **list2);
+void	ft_rra(t_list **list, int p);
+void	ft_rrb(t_list **list, int p);
+void	ft_rrr(t_list **list, t_list **list2, int p);
+
+void	ft_sa(t_list **list, int p);
+void	ft_sb(t_list **list, int p);
+void	ft_ss(t_list **list, t_list **list2, int p);
 
 int		ft_check_not_int(int ac, char **av);
 int		ft_check_over_under_int(int ac, char **av);

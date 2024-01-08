@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:06:59 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/08 11:57:39 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:22:43 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,21 @@ void	ft_sort_three(t_list **a)
 	mid = (*a)->next->content;
 	bot = (*a)->next->next->content;
 	if (top > mid && mid < bot && bot > top)
-		ft_sa(a, 1);
+		ft_sa(a, PRINT);
 	else if (top > mid && mid > bot && bot < top)
 	{
-		ft_sa(a, 1);
-		ft_rra(a, 1);
+		ft_sa(a, PRINT);
+		ft_rra(a, PRINT);
 	}
 	else if (top > mid && mid < bot && bot < top)
-		ft_ra(a, 1);
+		ft_ra(a, PRINT);
 	else if (top < mid && mid > bot && bot > top)
 	{
-		ft_sa(a, 1);
-		ft_ra(a, 1);
+		ft_sa(a, PRINT);
+		ft_ra(a, PRINT);
 	}
 	else if (top < mid && mid > bot && bot < top)
-		ft_rra(a, 1);
+		ft_rra(a, PRINT);
 }
 
 void	ft_sort_till_3_remains(t_list **a, t_list **b)
@@ -107,15 +107,15 @@ void	ft_sort_opti(t_list **a, t_list **b)
 
 	smallest = ft_find_smaller(*a);
 	pos = ft_num_pos(*a, smallest);
-	ft_pb(a, b);
-	ft_pb(a, b);
+	ft_pb(a, b, PRINT);
+	ft_pb(a, b, PRINT);
 	ft_sort_till_3_remains(a, b);
 	ft_sort_three(a);
 	ft_sort_till_empty(a, b);
 	if (pos < ft_lstsize(*a) / 2)
 		while ((*a)->content != ft_find_smaller(*a))
-			ft_rra(a, 1);
+			ft_rra(a, PRINT);
 	else
 		while ((*a)->content != ft_find_smaller(*a))
-			ft_ra(a, 1);
+			ft_ra(a, PRINT);
 }

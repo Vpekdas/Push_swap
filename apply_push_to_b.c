@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:04:40 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/08 11:56:25 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:21:54 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,43 +15,43 @@
 int	ft_apply_ra_rb(t_list **a, t_list **b, int c)
 {
 	while ((*a)->content != c && ft_find_right_pos(*b, c) > 0)
-		ft_rr(a, b);
+		ft_rr(a, b, PRINT);
 	while ((*a)->content != c)
-		ft_ra(a, 1);
+		ft_ra(a, PRINT);
 	while (ft_find_right_pos(*b, c) > 0)
-		ft_rb(b, 1);
-	ft_pb(a, b);
+		ft_rb(b, PRINT);
+	ft_pb(a, b, PRINT);
 	return (-1);
 }
 
 int	ft_apply_ra_rrb(t_list **a, t_list **b, int c)
 {
 	while ((*a)->content != c)
-		ft_ra(a, 1);
+		ft_ra(a, PRINT);
 	while (ft_find_right_pos(*b, c) > 0)
-		ft_rrb(b, 1);
-	ft_pb(a, b);
+		ft_rrb(b, PRINT);
+	ft_pb(a, b, PRINT);
 	return (-1);
 }
 
 int	ft_apply_rra_rrb(t_list **a, t_list **b, int c)
 {
 	while (((*a)->content != c) && (ft_find_right_pos(*b, c) > 0))
-		ft_rrr(a, b);
+		ft_rrr(a, b, PRINT);
 	while ((*a)->content != c)
-		ft_rra(a, 1);
+		ft_rra(a, PRINT);
 	while (ft_find_right_pos(*b, c) > 0)
-		ft_rrb(b, 1);
-	ft_pb(a, b);
+		ft_rrb(b, PRINT);
+	ft_pb(a, b, PRINT);
 	return (-1);
 }
 
 int	ft_apply_rra_rb(t_list **a, t_list **b, int c)
 {
 	while ((*a)->content != c)
-		ft_rra(a, 1);
+		ft_rra(a, PRINT);
 	while (ft_find_right_pos(*b, c) > 0)
-		ft_rb(b, 1);
-	ft_pb(a, b);
+		ft_rb(b, PRINT);
+	ft_pb(a, b, PRINT);
 	return (-1);
 }
