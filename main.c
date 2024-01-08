@@ -21,20 +21,20 @@ int	main(int ac, char **av)
 
 	b = NULL;
 	if (ac < 2)
-		return (ft_printf("Error\n"));
+		return (ft_print_error());
 	else if (ac == 2)
 	{
 		str = ft_split(av[1], ' ');
 		words = ft_count_words(str);
 		if (ft_overall_check_split(words, str) == 1)
-			return (ft_free_split(str), (ft_printf("Error\n")));
+			return (ft_free_split_and_print_error(str));
 		a = ft_linked_list_split(words, str);
 		ft_free_split(str);
 	}
 	else if (ac > 2)
 	{
 		if (ft_overall_check(ac, av) == 1)
-			return (ft_printf("Error\n"));
+			return (ft_print_error());
 		a = ft_linked_list(ac, av);
 	}
 	ft_sort_list(&a, &b);

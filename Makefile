@@ -41,6 +41,8 @@ SOURCES =  apply_push_to_a.c \
 			utils_functions.c \
 			utils_functions2.c \
 			free_functions.c \
+			print_error_functions.c \
+
 
 MAIN_SOURCE = main.c 
 

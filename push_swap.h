@@ -64,6 +64,8 @@ t_list	*ft_linked_list_split(int ac, char **av);
 int		ft_count_words(char **str);
 int		ft_free_split(char **str);
 int		ft_free_list(t_list **a, t_list **b);
+int		ft_free_split_and_print_error(char **str);
+int		ft_print_error(void);
 
 int		ft_which_move_a(t_list *a, t_list *b);
 int		ft_case_ra_rb(t_list *a, t_list *b, int c);
