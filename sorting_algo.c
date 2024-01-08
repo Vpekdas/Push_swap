@@ -116,8 +116,8 @@ void	ft_sort_opti(t_list **a, t_list **b)
 	ft_sort_till_empty(a, b);
 	if (pos < ft_lstsize(*a) / 2)
 		while ((*a)->content != ft_find_smaller(*a))
-			ft_ra(a, 1);
+			ft_rra(a, 1);
 	else
 		while ((*a)->content != ft_find_smaller(*a))
-			ft_rra(a, 1);
+			ft_ra(a, 1);
 }
