@@ -6,12 +6,10 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:18:00 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/04 16:44:15 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 11:57:50 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
 int	ft_find_right_pos2(t_list *a, int c)

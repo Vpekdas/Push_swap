@@ -6,12 +6,10 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:00:20 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 17:40:06 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 11:56:43 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
 int	ft_case_ra_rb(t_list *a, t_list *b, int c)

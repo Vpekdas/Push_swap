@@ -6,23 +6,23 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:17:15 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 17:34:27 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 15:59:54 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	i;
 
-	i = 0;
-	while (s[i])
-	{
-		i++;
-	}
-	return (i);
-}
+// 	i = 0;
+// 	while (s[i])
+// 	{
+// 		i++;
+// 	}
+// 	return (i);
+// }
 
 int	ft_putchar(const char c)
 {

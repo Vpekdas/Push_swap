@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruction_push.c                                 :+:      :+:    :+:   */
+/*   free_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 16:58:57 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/08 11:57:07 by vopekdas         ###   ########.fr       */
+/*   Created: 2024/01/08 16:03:06 by vopekdas          #+#    #+#             */
+/*   Updated: 2024/01/08 16:03:57 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_pa(t_list **a, t_list **b)
+int	ft_free_split(char **str)
 {
-	t_list	*temp;
+	int	i;
 
-	if (!*a)
-		return ;
-	temp = (*a)->next;
-	(*a)->next = *b;
-	*b = *a;
-	*a = temp;
-	ft_printf("pa\n");
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	return (0);
 }
 
-void	ft_pb(t_list **b, t_list **a)
+int	ft_free_list(t_list **a, t_list **b)
 {
-	t_list	*temp;
+	t_list	*tmp;
 
-	if (!*b)
-		return ;
-	temp = (*b)->next;
-	(*b)->next = *a;
-	*a = *b;
-	*b = temp;
-	ft_printf("pb\n");
+	while (*a)
+	{
+		tmp = (*a);
+		(*a) = (*a)->next;
+		free(tmp);
+	}
+	while (*b)
+	{
+		tmp = (*b);
+		(*b) = (*b)->next;
+		free(tmp);
+	}
+	return (0);
 }

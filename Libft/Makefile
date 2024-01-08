@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2024/01/06 16:56:44 by vopekdas         ###   ########.fr        #
+#    Updated: 2024/01/08 15:53:37 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,9 @@ SOURCES =  ft_isalpha.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
-			ft_lstmap.c 
+			ft_lstmap.c \
+			get_next_line.c \
+			get_next_line_utils.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -82,7 +84,7 @@ $(NAME): $(OBJECTS)
 	ar r $(NAME) $(OBJECTS)
 
 clean:
-	$(RM) $(OBJECTS) $(BONUS_OBJECTS)
+	$(RM) $(OBJECTS)
 
 fclean: clean
 	$(RM) $(NAME)

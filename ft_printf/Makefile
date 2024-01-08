@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2024/01/06 16:57:17 by vopekdas         ###   ########.fr        #
+#    Updated: 2024/01/08 12:24:33 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
 
 clean:
-	$(RM) $(OBJECTS) $(BONUS_OBJECTS)
+	$(RM) $(OBJECTS)
 
 fclean: clean
 	$(RM) $(NAME)

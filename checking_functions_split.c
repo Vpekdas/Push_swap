@@ -6,14 +6,11 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 16:49:52 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/06 17:48:27 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 12:21:40 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
-#include <stdlib.h>
 
 int	ft_check_not_int_split(int ac, char **av)
 {
@@ -79,7 +76,7 @@ int	ft_check_is_not_duplicate_split(int ac, char **av)
 	return (0);
 }
 
-int	ft_check_sorted_split(t_list	*a)
+int	ft_check_sorted_split(t_list *a)
 {
 	t_list	*current;
 

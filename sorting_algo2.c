@@ -6,12 +6,10 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:58:29 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/06 18:30:41 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 16:24:31 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
 void	ft_sort_four(t_list **a, t_list **b)
@@ -32,4 +30,18 @@ void	ft_sort_four(t_list **a, t_list **b)
 	ft_pa(b, a);
 	while ((*a)->content != ft_find_smaller(*a))
 		ft_ra(a, 1);
+}
+
+void	ft_sort_list(t_list **a, t_list **b)
+{
+	if (ft_lstsize(*a) == 1)
+		return ;
+	else if (ft_lstsize(*a) == 2)
+		ft_sort_two(a);
+	else if (ft_lstsize(*a) == 3)
+		ft_sort_three(a);
+	else if (ft_lstsize(*a) == 4)
+		ft_sort_four(a, b);
+	else
+		ft_sort_opti(a, b);
 }

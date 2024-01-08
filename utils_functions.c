@@ -6,12 +6,10 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:16:16 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 17:37:13 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 11:57:47 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
 int	ft_find_biggest(t_list *a)

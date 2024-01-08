@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:25:45 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 17:34:04 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 15:52:54 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdint.h>
+# include "get_next_line.h"
 
 int			ft_atoi(const char *str);
 void		ft_bzero(void *s, size_t n);

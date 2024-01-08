@@ -6,11 +6,10 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:18:13 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/12 11:10:09 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 11:57:21 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
 void	ft_sa(t_list **list, int t)

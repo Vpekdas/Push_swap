@@ -6,12 +6,10 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 14:32:33 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 17:33:38 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 11:57:04 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
 t_list	*ft_linked_list(int ac, char **av)

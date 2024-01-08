@@ -6,12 +6,10 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 14:23:19 by vopekdas          #+#    #+#             */
-/*   Updated: 2023/12/12 11:12:17 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 11:57:12 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
 void	ft_rra(t_list **list, int t)

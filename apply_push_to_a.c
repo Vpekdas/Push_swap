@@ -6,12 +6,10 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:05:32 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/05 17:38:11 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 11:56:16 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "ft_printf/include/ft_printf.h"
 #include "push_swap.h"
 
 int	ft_apply_ra_rb2(t_list **a, t_list **b, int c)

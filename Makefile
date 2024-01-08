@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2024/01/06 18:00:38 by vopekdas         ###   ########.fr        #
+#    Updated: 2024/01/08 16:24:06 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ LIGHT_PURPLE=\033[1;35m
 
 NAME = push_swap
 
+BONUS_NAME = checker
+
 SOURCES =  apply_push_to_a.c \
 			apply_push_to_b.c \
 			case_push_to_a.c \
@@ -34,17 +36,25 @@ SOURCES =  apply_push_to_a.c \
 			instruction_reverse_rotate.c \
 			instruction_rotate.c \
 			instruction_swap.c \
-			main.c \
 			sorting_algo.c \
 			sorting_algo2.c \
 			utils_functions.c \
 			utils_functions2.c \
-			
+			free_functions.c \
+
+MAIN_SOURCE = main.c 
+
+BONUS_SOURCES =  checker.c \
+
 LIBFT_PATH = Libft
 
 FT_PRINTF_PATH = ft_printf
 
 OBJECTS = $(SOURCES:.c=.o)
+
+MAIN_OBJECT = $(MAIN_SOURCE:.c=.o)
+
+BONUS_OBJECTS = $(BONUS_SOURCES:.c=.o)
 
 CC=cc
 
@@ -107,9 +117,9 @@ all: libft ft_printf $(NAME)
 	@printf "$(DARK_GRAY)                         |______|                     |_|    \n\033[0m\n"
 	@printf "$(LIGHT_GREEN)Compilation completed successfully.\n\033[0m"
 
-$(NAME): $(OBJECTS)
-	@echo "$(LIGHT_BLUE)"
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJECTS) -LLibft -lft -Lft_printf -lftprintf
+$(NAME): $(OBJECTS) $(MAIN_OBJECT)
+	@echo "$(LIGHT_CYAN)"
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJECTS) $(MAIN_OBJECT) -LLibft -lft -Lft_printf -lftprintf
 
 libft: 
 	@printf "$(LIGHT_BLUE)Starting compilation...\n\033[0m"
@@ -119,7 +129,7 @@ libft:
 	@printf "$(LIGHT_BLUE) | |      | | | '_ \|  _| __|\n"
 	@printf "$(LIGHT_MAGENTA) | |____ _| |_| |_) | | | |_ \n"
 	@printf "$(LIGHT_CYAN) |______|_____|_.__/|_|  \__|\n\033[0m"
-	@echo "$(LIGHT_BLUE)"
+	@echo "$(LIGHT_CYAN)"
 	$(MAKE) -C $(LIBFT_PATH)
 	@printf "$(LIGHT_GREEN)Compilation completed successfully.\n\033[0m"
 
@@ -133,21 +143,26 @@ ft_printf:
 	@printf "$(LIGHT_CYAN) |_|  \__|   | .__/|_|  |_|_| |_|\__|_|  \n"
 	@printf "$(WHITE)       ______| |                         \n"
 	@printf "$(DARK_GRAY)      |______|_|                         \n\033[0m"
-	@echo "$(LIGHT_BLUE)"
+	@echo "$(LIGHT_CYAN)"
 	$(MAKE) -C $(FT_PRINTF_PATH)
 	@printf "$(LIGHT_GREEN)Compilation completed successfully.\n\033[0m"
 
+
+bonus: $(BONUS_OBJECTS) $(OBJECTS) libft ft_printf
+	$(CC) $(CFLAGS) -o $(BONUS_NAME) $(OBJECTS) $(BONUS_OBJECTS) -LLibft -lft -Lft_printf -lftprintf 
+
 clean:
 	@echo "$(LIGHT_PURPLE)"
-	$(RM) $(OBJECTS)
+	$(RM) $(OBJECTS) $(BONUS_OBJECTS) $(MAIN_OBJECT)
 	cd $(LIBFT_PATH) && make clean
 	cd $(FT_PRINTF_PATH) && make clean
-	@printf "$(LIGHT_PURPLE)Cleaned all object files.\n\033[0m"
+	@printf "$(LIGHT_RED)Cleaned all object files.\n\033[0m"
 
 fclean: clean
 	@echo "$(LIGHT_PURPLE)"
 	$(RM) $(NAME)
 	cd $(LIBFT_PATH) && make fclean
 	cd $(FT_PRINTF_PATH) && make fclean
+	@printf "$(LIGHT_RED)Cleaned all object files.\n\033[0m"
 
 re: fclean all

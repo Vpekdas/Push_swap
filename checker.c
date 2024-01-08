@@ -1,16 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/04 15:14:10 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/08 16:04:27 by vopekdas         ###   ########.fr       */
+/*   Created: 2024/01/08 11:55:40 by vopekdas          #+#    #+#             */
+/*   Updated: 2024/01/08 16:31:09 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_checker_read(t_list **a, t_list **b)
+{
+	char	*line;
+
+	line = get_next_line(0);
+	while (line)
+	{
+		if (ft_strcmp(line, "sa\n") == 0)
+			ft_sa(a, 0);
+		else if (ft_strcmp(line, "sb\n") == 0)
+			ft_sb(b, 0);
+		else if (ft_strcmp(line, "ss\n") == 0)
+			ft_ss(a, b);
+		else if (ft_strcmp(line, "pa\n") == 0)
+			ft_pa(b, a);
+		else if (ft_strcmp(line, "pb\n") == 0)
+			ft_pb(a, b);
+		else if (ft_strcmp(line, "ra\n") == 0)
+			ft_ra(a, 0);
+		else if (ft_strcmp(line, "rb\n") == 0)
+			ft_rb(b, 0);
+		else if (ft_strcmp(line, "rr\n") == 0)
+			ft_rr(a, b);
+		else if (ft_strcmp(line, "rra\n") == 0)
+			ft_rra(a, 0);
+		else if (ft_strcmp(line, "rrb\n") == 0)
+			ft_rrb(b, 0);
+		else if (ft_strcmp(line, "rrr\n") == 0)
+			ft_rrr(a, b);
+		else
+			ft_printf("Error\n");
+		free(line);
+		line = get_next_line(0);
+	}
+	if (ft_check_sorted(*a) == 0 && ft_lstsize(*b) == 0)
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
+}
 
 int	main(int ac, char **av)
 {
@@ -38,45 +78,6 @@ int	main(int ac, char **av)
 		a = ft_linked_list(ac, av);
 	}
 	ft_sort_list(&a, &b);
+	ft_checker_read(&a, &b);
 	return (ft_free_list(&a, &b));
 }
-
-// int	main (int ac, char **av)
-// {
-// 	t_list	*list = ft_linked_list(ac, av);
-// 	t_list	*list2 = NULL;
-// 	t_list	*current = list;
-
-// 	ft_printf("BEFORE SORTING\n");
-// 	ft_printf("==================\n");
-// 	while (current)
-// 	{
-// 		ft_printf("%d -> ", current->content);
-// 		current = current->next;
-// 	}
-// 	ft_printf("%s\n", current);
-
-// 	ft_sort_four(&list, &list2);
-
-// 	current = list;
-
-// 	ft_printf("AFTER SORTING IN STACK A\n");
-// 	ft_printf("==================\n");
-// 	while (current)
-// 	{
-// 		ft_printf("%d -> ", current->content);
-// 		current = current->next;
-// 	}
-// 	ft_printf("%s\n", current);
-
-// 	current = list2;
-
-// 	ft_printf("AFTER SORTING IN STACK B\n");
-// 	ft_printf("==================\n");
-// 	while (current)
-// 	{
-// 		ft_printf("%d -> ", current->content);
-// 		current = current->next;
-// 	}
-// 	ft_printf("%s\n", current);
-// }

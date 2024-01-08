@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruction_push.c                                 :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 16:58:57 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/08 11:57:07 by vopekdas         ###   ########.fr       */
+/*   Created: 2023/11/15 14:44:29 by vopekdas          #+#    #+#             */
+/*   Updated: 2024/01/08 15:59:12 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef GET_NEXT_LINE_H
 
-void	ft_pa(t_list **a, t_list **b)
-{
-	t_list	*temp;
+# define GET_NEXT_LINE_H
 
-	if (!*a)
-		return ;
-	temp = (*a)->next;
-	(*a)->next = *b;
-	*b = *a;
-	*a = temp;
-	ft_printf("pa\n");
-}
+# include "libft.h"
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdint.h>
+# include <stddef.h>
 
-void	ft_pb(t_list **b, t_list **a)
-{
-	t_list	*temp;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
 
-	if (!*b)
-		return ;
-	temp = (*b)->next;
-	(*b)->next = *a;
-	*a = *b;
-	*b = temp;
-	ft_printf("pb\n");
-}
+char		*get_next_line(int fd);
+char		*ft_strjoin_and_free(char *s1, char *s2);
+
+#endif
