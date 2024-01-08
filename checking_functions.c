@@ -46,7 +46,6 @@ int	ft_check_over_under_int(int ac, char **av)
 	{
 		res = ft_atoi(av[i]);
 		str = ft_itoa(res);
-
 		if (ft_strcmp(av[i], str) != 0)
 		{
 			free(str);
