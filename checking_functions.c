@@ -25,7 +25,7 @@ int	ft_check_not_int(int ac, char **av)
 	{
 		while (av[i][j])
 		{
-			if (!ft_isdigit(av[i][j]))
+			if (!ft_isdigit(av[i][j]) && av[i][j] != '-' && av[i][j] != '+')
 				return (1);
 			j++;
 		}
@@ -40,17 +40,14 @@ int	ft_check_over_under_int(int ac, char **av)
 	int		i;
 	int		res;
 	char	*str;
-	char	*arg;
 
 	i = 1;
 	while (i < ac)
 	{
 		res = ft_atoi(av[i]);
 		str = ft_itoa(res);
-		arg = av[i];
-		if (*arg == '-')
-			arg++;
-		if (ft_strcmp(arg, str + (*str == '-')) != 0)
+
+		if (ft_strcmp(av[i], str) != 0)
 		{
 			free(str);
 			return (1);
