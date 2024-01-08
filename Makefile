@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2024/01/08 17:29:31 by vopekdas         ###   ########.fr        #
+#    Updated: 2024/01/08 17:30:51 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -149,7 +149,9 @@ ft_printf:
 
 
 bonus: $(BONUS_OBJECTS) $(OBJECTS) libft ft_printf
+	@printf "$(LIGHT_BLUE)Starting compilation...\n\033[0m"
 	$(CC) $(CFLAGS) -o $(BONUS_NAME) $(OBJECTS) $(BONUS_OBJECTS) -LLibft -lft -Lft_printf -lftprintf 
+	@printf "$(LIGHT_GREEN)Compilation completed successfully.\n\033[0m"
 
 clean:
 	@echo "$(LIGHT_PURPLE)"

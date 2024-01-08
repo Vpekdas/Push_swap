@@ -6,11 +6,12 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:55:40 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/08 17:27:01 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/08 17:34:50 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Libft/get_next_line.h"
+#include "Libft/libft.h"
 #include "push_swap.h"
 
 void	ft_checker_read(t_list **a, t_list **b)
