@@ -89,6 +89,7 @@ void	ft_sort_hundred_and_more(t_list **a, t_list **b)
 		while ((*a)->content != ft_find_smaller(*a))
 			ft_ra(a, PRINT);
 }
+
 void	ft_select_and_apply_sort(t_list **a, t_list **b)
 {
 	if (ft_lstsize(*a) == 1 || !a)
