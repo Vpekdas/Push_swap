@@ -12,36 +12,52 @@
 
 #include "push_swap.h"
 
-void	ft_sort_four(t_list **a, t_list **b)
+void	ft_sort_till_3_remains(t_list **a, t_list **b)
 {
-	int		pos;
 	int		i;
+	t_list	*current;
 
-	i = 0;
-	ft_pb(a, b, PRINT);
-	ft_sort_three(a);
-	pos = ft_find_right_pos2(*a, (*b)->content);
-	if (pos > ft_lstsize(*a) / 2)
-		while (i++ < pos)
-			ft_rra(a, PRINT);
-	else
-		while (i++ < pos)
-			ft_ra(a, PRINT);
-	ft_pa(b, a, PRINT);
-	while ((*a)->content != ft_find_smaller(*a))
-		ft_ra(a, PRINT);
+	while (ft_lstsize(*a) > 3 && ft_check_sorted(*a) == 1)
+	{
+		current = *a;
+		i = ft_which_move_b(*a, *b);
+		while (i >= 0)
+		{
+			if (i == ft_case_ra_rb(*a, *b, current->content))
+				i = ft_apply_ra_rb(a, b, current->content);
+			else if (i == ft_case_ra_rrb(*a, *b, current->content))
+				i = ft_apply_ra_rrb(a, b, current->content);
+			else if (i == ft_case_rra_rb(*a, *b, current->content))
+				i = ft_apply_rra_rb(a, b, current->content);
+			else if (i == ft_case_rra_rrb(*a, *b, current->content))
+				i = ft_apply_rra_rrb(a, b, current->content);
+			else
+				current = current->next;
+		}
+	}
 }
 
-void	ft_select_and_apply_sort(t_list **a, t_list **b)
+void	ft_sort_till_empty(t_list **a, t_list **b)
 {
-	if (ft_lstsize(*a) == 1 || !a)
-		return ;
-	else if (ft_lstsize(*a) == 2)
-		ft_sort_two(a);
-	else if (ft_lstsize(*a) == 3)
-		ft_sort_three(a);
-	else if (ft_lstsize(*a) == 4)
-		ft_sort_four(a, b);
-	else
-		ft_sort_hundred_and_more(a, b);
+	int		i;
+	t_list	*current;
+
+	while (ft_lstsize(*b) > 0)
+	{
+		current = *b;
+		i = ft_which_move_a(*a, *b);
+		while (i >= 0)
+		{
+			if (i == ft_case_ra_rb2(*a, *b, current->content))
+				i = ft_apply_ra_rb2(a, b, current->content);
+			else if (i == ft_case_ra_rrb2(*a, *b, current->content))
+				i = ft_apply_ra_rrb2(a, b, current->content);
+			else if (i == ft_case_rra_rb2(*a, *b, current->content))
+				i = ft_apply_rra_rb2(a, b, current->content);
+			else if (i == ft_case_rra_rrb2(*a, *b, current->content))
+				i = ft_apply_rra_rrb2(a, b, current->content);
+			else
+				current = current->next;
+		}
+	}
 }
