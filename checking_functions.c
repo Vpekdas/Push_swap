@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 17:10:39 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/09 14:34:47 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:52:20 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_check_over_under_int(int ac, char **av)
 		arg = av[i];
 		if (*arg == '-' && str[j++] == '-')
 			arg++;
-		while (*arg && *arg == '0' && (*arg + 1) && (*arg + 1) == '0')
+		while (*arg && *arg == '0' && ft_strlen(arg) > 1)
 			arg++;
 		j += ft_skip_zero(str);
 		if (ft_strcmp(arg, str + j) != 0)

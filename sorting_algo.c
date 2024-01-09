@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:06:59 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/09 13:46:15 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:44:23 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,12 +94,12 @@ void	ft_select_and_apply_sort(t_list **a, t_list **b)
 {
 	if (ft_lstsize(*a) == 1 || !a || !*a)
 		return ;
-	else if (ft_lstsize(*a) == 2)
+	else if (ft_lstsize(*a) == 2 && ft_check_sorted(*a) == 1)
 		ft_sort_two(a);
-	else if (ft_lstsize(*a) == 3)
+	else if (ft_lstsize(*a) == 3 && ft_check_sorted(*a) == 1)
 		ft_sort_three(a);
-	else if (ft_lstsize(*a) == 4)
+	else if (ft_lstsize(*a) == 4 && ft_check_sorted(*a) == 1)
 		ft_sort_four(a, b);
-	else
+	else if (ft_lstsize(*a) > 4 && ft_check_sorted(*a) == 1)
 		ft_sort_hundred_and_more(a, b);
 }
