@@ -16,21 +16,12 @@ int	main(int ac, char **av)
 {
 	t_list	*a;
 	t_list	*b;
-	int		words;
-	char	**str;
 
 	b = NULL;
 	if (ac < 2)
-		return (ft_print_error());
+		return (0);
 	else if (ac == 2)
-	{
-		str = ft_split(av[1], ' ');
-		words = ft_count_words(str);
-		if (ft_overall_check_split(words, str) == 1)
-			return (ft_free_split_and_print_error(str));
-		a = ft_linked_list_split(words, str);
-		ft_free_split(str);
-	}
+		a = ft_linked_list_if_ac_2(av);
 	else if (ac > 2)
 	{
 		if (ft_overall_check(ac, av) == 1)

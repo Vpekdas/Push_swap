@@ -12,19 +12,19 @@
 
 #include "push_swap.h"
 
-void	ft_rra(t_list **list, int p)
+void	ft_rra(t_list **a, int p)
 {
 	int		temp;
 	t_list	*current;
 
-	if (!list || !(*list) || !(*list)->next)
+	if (!a || !(*a) || !(*a)->next)
 		return ;
-	current = *list;
+	current = *a;
 	temp = 0;
 	while (current)
 	{
-		temp = ft_lstlast(*list)->content;
-		ft_lstlast(*list)->content = current->content;
+		temp = ft_lstlast(*a)->content;
+		ft_lstlast(*a)->content = current->content;
 		current->content = temp;
 		current = current->next;
 	}
@@ -32,19 +32,19 @@ void	ft_rra(t_list **list, int p)
 		ft_printf("rra\n");
 }
 
-void	ft_rrb(t_list **list, int p)
+void	ft_rrb(t_list **b, int p)
 {
 	int		temp;
 	t_list	*current;
 
-	if (!list || !(*list) || !(*list)->next)
+	if (!b || !(*b) || !(*b)->next)
 		return ;
-	current = *list;
+	current = *b;
 	temp = 0;
 	while (current)
 	{
-		temp = ft_lstlast(*list)->content;
-		ft_lstlast(*list)->content = current->content;
+		temp = ft_lstlast(*b)->content;
+		ft_lstlast(*b)->content = current->content;
 		current->content = temp;
 		current = current->next;
 	}
@@ -52,12 +52,12 @@ void	ft_rrb(t_list **list, int p)
 		ft_printf("rrb\n");
 }
 
-void	ft_rrr(t_list **list, t_list **list2, int p)
+void	ft_rrr(t_list **a, t_list **b, int p)
 {
-	if (!list || !(*list2))
+	if (!a || !(b))
 		return ;
-	ft_rra(list, NO_PRINT);
-	ft_rrb(list2, NO_PRINT);
+	ft_rra(a, NO_PRINT);
+	ft_rrb(b, NO_PRINT);
 	if (p == PRINT)
 		ft_printf("rrr\n");
 }

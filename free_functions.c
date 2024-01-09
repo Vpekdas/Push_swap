@@ -45,9 +45,9 @@ int	ft_free_list(t_list **a, t_list **b)
 	return (0);
 }
 
-int	ft_free_split_and_print_error(char **str)
+t_list	*ft_free_split_and_print_error(char **str)
 {
 	ft_free_split(str);
 	ft_putstr_fd("Error\n", 2);
-	return (1);
+	return (NULL);
 }

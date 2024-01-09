@@ -12,38 +12,38 @@
 
 #include "push_swap.h"
 
-void	ft_sa(t_list **list, int t)
+void	ft_sa(t_list **a, int t)
 {
 	int		temp;
 
-	if (!list || !(*list) || !(*list)->next)
+	if (!a || !(*a) || !(*a)->next)
 		return ;
-	temp = (*list)->content;
-	(*list)->content = (*list)->next->content;
-	(*list)->next->content = temp;
+	temp = (*a)->content;
+	(*a)->content = (*a)->next->content;
+	(*a)->next->content = temp;
 	if (t == PRINT)
 		ft_printf("sa\n");
 }
 
-void	ft_sb(t_list **list, int t)
+void	ft_sb(t_list **b, int t)
 {
 	int		temp;
 
-	if (!list || !(*list) || !(*list)->next)
+	if (!b || !(*b) || !(*b)->next)
 		return ;
-	temp = (*list)->content;
-	(*list)->content = (*list)->next->content;
-	(*list)->next->content = temp;
+	temp = (*b)->content;
+	(*b)->content = (*b)->next->content;
+	(*b)->next->content = temp;
 	if (t == PRINT)
 		ft_printf("sb\n");
 }
 
-void	ft_ss(t_list **list, t_list **list2, int t)
+void	ft_ss(t_list **a, t_list **b, int t)
 {
-	if (!list || !list2)
+	if (!a || !b)
 		return ;
-	ft_sa(list, NO_PRINT);
-	ft_sb(list2, NO_PRINT);
+	ft_sa(a, NO_PRINT);
+	ft_sb(a, NO_PRINT);
 	if (t == PRINT)
 		ft_printf("ss\n");
 }

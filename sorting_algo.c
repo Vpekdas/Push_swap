@@ -100,7 +100,7 @@ void	ft_sort_till_empty(t_list **a, t_list **b)
 	}
 }
 
-void	ft_sort_opti(t_list **a, t_list **b)
+void	ft_sort_hundred_and_more(t_list **a, t_list **b)
 {
 	int	smallest;
 	int	pos;

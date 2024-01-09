@@ -32,9 +32,9 @@ void	ft_sort_four(t_list **a, t_list **b)
 		ft_ra(a, PRINT);
 }
 
-void	ft_sort_list(t_list **a, t_list **b)
+void	ft_select_and_apply_sort(t_list **a, t_list **b)
 {
-	if (ft_lstsize(*a) == 1)
+	if (ft_lstsize(*a) == 1 || !a)
 		return ;
 	else if (ft_lstsize(*a) == 2)
 		ft_sort_two(a);
@@ -43,5 +43,5 @@ void	ft_sort_list(t_list **a, t_list **b)
 	else if (ft_lstsize(*a) == 4)
 		ft_sort_four(a, b);
 	else
-		ft_sort_opti(a, b);
+		ft_sort_hundred_and_more(a, b);
 }

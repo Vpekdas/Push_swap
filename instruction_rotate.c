@@ -12,14 +12,14 @@
 
 #include "push_swap.h"
 
-void	ft_ra(t_list **list, int p)
+void	ft_ra(t_list **a, int p)
 {
 	int		temp;
 	t_list	*current;
 
-	if (!list || !(*list) || !(*list)->next)
+	if (!a || !(*a) || !(*a)->next)
 		return ;
-	current = *list;
+	current = *a;
 	while (current)
 	{
 		temp = current->content;
@@ -34,14 +34,14 @@ void	ft_ra(t_list **list, int p)
 		ft_printf("ra\n");
 }
 
-void	ft_rb(t_list **list, int p)
+void	ft_rb(t_list **b, int p)
 {
 	int		temp;
 	t_list	*current;
 
-	if (!list || !(*list) || !(*list)->next)
+	if (!b || !(*b) || !(*b)->next)
 		return ;
-	current = *list;
+	current = *b;
 	while (current)
 	{
 		temp = current->content;
@@ -56,12 +56,12 @@ void	ft_rb(t_list **list, int p)
 		ft_printf("rb\n");
 }
 
-void	ft_rr(t_list **list, t_list **list2, int p)
+void	ft_rr(t_list **a, t_list **b, int p)
 {
-	if (!list || (!list2))
+	if (!a || (!b))
 		return ;
-	ft_ra(list, NO_PRINT);
-	ft_rb(list2, NO_PRINT);
+	ft_ra(a, NO_PRINT);
+	ft_rb(b, NO_PRINT);
 	if (p == PRINT)
 		ft_printf("rr\n");
 }

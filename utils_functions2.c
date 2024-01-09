@@ -12,26 +12,6 @@
 
 #include "push_swap.h"
 
-int	ft_find_right_pos2(t_list *a, int c)
-{
-	int		i;
-	t_list	*next;
-
-	i = 1;
-	next = a->next;
-	if (c < a->content && c > ft_lstlast(a)->content)
-		return (0);
-	if (c > ft_find_biggest(a) || c < ft_find_smaller(a))
-		return (ft_num_pos(a, ft_find_smaller(a)));
-	while (a->content > c || next->content < c)
-	{
-		a = a->next;
-		next = a->next;
-		i++;
-	}
-	return (i);
-}
-
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
