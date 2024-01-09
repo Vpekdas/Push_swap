@@ -38,18 +38,25 @@ int	ft_check_over_under_int(int ac, char **av)
 	int		i;
 	int		res;
 	char	*str;
+	char	*arg;
 
 	i = 1;
 	while (i < ac)
 	{
 		res = ft_atoi(av[i]);
 		str = ft_itoa(res);
-		if (ft_strcmp(av[i], str) != 0)
+		arg = av[i];
+		if (*arg == '-' && *str == '-')
 		{
-			free(str);
-			return (1);
+			arg++;
+			str++;
 		}
-		free(str);
+		while (*arg && *arg == '0')
+			arg++;
+		while (*str && *str == '0')
+			str++;
+		if (ft_strcmp(arg, str) != 0)
+			return (1);
 		i++;
 	}
 	return (0);
