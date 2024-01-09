@@ -12,26 +12,6 @@
 
 #include "push_swap.h"
 
-t_list	*ft_linked_list_if_ac_2(char **av)
-{
-	t_list	*a;
-	int		words;
-	char	**str;
-
-	str = ft_split(av[1], ' ');
-	if (!str || str[0][0] == '\0')
-	{
-		ft_free_split(str);
-		return (NULL);
-	}
-	words = ft_count_words(str);
-	if (ft_overall_check_split(words, str) == 1)
-		return (ft_free_split_and_print_error(str));
-	a = ft_linked_list_split(words, str);
-	ft_free_split(str);
-	return (a);
-}
-
 int	main(int ac, char **av)
 {
 	t_list	*a;
