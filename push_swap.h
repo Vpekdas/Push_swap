@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:18:19 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/08 17:53:05 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/09 14:23:28 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int		ft_check_sorted_split(t_list *a);
 int		ft_overall_check_split(int ac, char **av);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_count_words(char **str);
+int		ft_skip_zero_or_minus(char *str);
 
 int		ft_find_biggest(t_list *a);
 int		ft_find_smaller(t_list *a);

@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 14:36:07 by vopekdas          #+#    #+#              #
-#    Updated: 2024/01/08 17:30:51 by vopekdas         ###   ########.fr        #
+#    Updated: 2024/01/09 13:49:28 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SOURCES =  apply_push_to_a.c \
 MAIN_SOURCE = main.c 
 
 BONUS_SOURCES =  checker.c \
+				checker_read_functions.c
 
 LIBFT_PATH = Libft
 

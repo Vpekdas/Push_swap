@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:18:00 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/08 11:57:50 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/09 14:23:14 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,18 @@ int	ft_count_words(char **str)
 
 	i = 0;
 	while (str[i])
+		i++;
+	return (i);
+}
+
+int	ft_skip_zero_or_minus(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-')
+		i++;
+	while (str[i] && str[i] == '0' && (str[i + 1]) && (str[i + 1]) == '0')
 		i++;
 	return (i);
 }
