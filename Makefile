@@ -31,7 +31,7 @@ SOURCES =  apply_push_to_a.c \
 			case_push_to_b.c \
 			checking_functions.c \
 			checking_functions_split.c \
-			create_list_argv.c \
+			create_list_av.c \
 			instruction_push.c \
 			instruction_reverse_rotate.c \
 			instruction_rotate.c \
@@ -157,14 +157,14 @@ bonus: $(BONUS_OBJECTS) $(OBJECTS) libft ft_printf
 
 clean:
 	@echo "$(LIGHT_PURPLE)"
-	$(RM) $(OBJECTS) $(BONUS_OBJECTS) $(MAIN_OBJECT) $(BONUS_NAME)
+	$(RM) $(OBJECTS) $(BONUS_OBJECTS) $(MAIN_OBJECT)
 	cd $(LIBFT_PATH) && make clean
 	cd $(FT_PRINTF_PATH) && make clean
 	@printf "$(LIGHT_RED)Cleaned all object files.\n\033[0m"
 
 fclean: clean
 	@echo "$(LIGHT_PURPLE)"
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(BONUS_NAME)
 	cd $(LIBFT_PATH) && make fclean
 	cd $(FT_PRINTF_PATH) && make fclean
 	@printf "$(LIGHT_RED)Cleaned all object files.\n\033[0m"
