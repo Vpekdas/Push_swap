@@ -99,6 +99,4 @@ void	ft_select_and_apply_sort(t_list **a, t_list **b);
 void	ft_sort_till_3_remains(t_list **a, t_list **b);
 void	ft_sort_till_empty(t_list **a, t_list **b);
 
-
-
 #endif 

@@ -80,6 +80,7 @@ int	ft_find_right_pos(t_list *a, int c)
 	}
 	return (i);
 }
+
 int	ft_find_right_pos2(t_list *a, int c)
 {
 	int		i;
