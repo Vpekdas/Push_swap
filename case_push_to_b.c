@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:00:20 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/08 11:56:43 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/13 15:48:03 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	ft_which_move_b(t_list *a, t_list *b)
 	int		move;
 
 	current = a;
-	cost = ft_case_rra_rrb(a, b, current->content);
+	cost = ft_case_ra_rb(a, b, current->content);
 	move = 0;
 	while (current)
 	{

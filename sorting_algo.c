@@ -6,7 +6,7 @@
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:06:59 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/01/09 17:44:23 by vopekdas         ###   ########.fr       */
+/*   Updated: 2024/01/13 15:43:29 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_sort_two(t_list **a)
 	top = (*a)->content;
 	bot = (*a)->next->content;
 	if (top > bot)
-		ft_sa(a, 1);
+		ft_sa(a, PRINT);
 }
 
 void	ft_sort_three(t_list **a)
