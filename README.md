@@ -42,7 +42,7 @@ Before you begin, ensure you have a C compiler installed, such as [Clang](https:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/push_swap
+    git clone https://github.com/Vpekdas/push_swap
     ```
 
 2. Navigate to the project directory:
