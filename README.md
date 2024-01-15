@@ -76,3 +76,7 @@ Before you begin, ensure you have a C compiler installed, such as [Clang](https:
     ```
 
     The `checker` program reads the operations from standard input and verifies if the stack is sorted.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
