@@ -65,7 +65,7 @@ Before you begin, ensure you have a C compiler installed, such as [Clang](https:
 3. Compile the project using `make` and `make bonus` if you want to use my own checker:
 
     ```bash
-    make
+    make && make bonus
     ```
 
     This will generate two executables, `push_swap` and `checker`.
