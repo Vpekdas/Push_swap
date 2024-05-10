@@ -43,7 +43,7 @@ void	ft_ss(t_list **a, t_list **b, int t)
 	if (!a || !b)
 		return ;
 	ft_sa(a, NO_PRINT);
-	ft_sb(a, NO_PRINT);
+	ft_sb(b, NO_PRINT);
 	if (t == PRINT)
 		ft_printf("ss\n");
 }
