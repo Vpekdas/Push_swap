@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_mandatory2.c                                :+:      :+:    :+:   */
+/*   instruction_push.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 16:20:50 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/06/02 00:26:38 by vopekdas         ###   ########.fr       */
+/*   Created: 2023/12/07 16:58:57 by vopekdas          #+#    #+#             */
+/*   Updated: 2024/06/04 04:35:48 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/push_swap.h"
 
-int	ft_handle_c(int fmt)
+void	ft_pa(t_list **a, t_list **b, int p)
 {
-	int	len;
+	t_list	*temp;
 
-	len = 0;
-	len = ft_putchar(fmt);
-	return (len);
+	if (!*a)
+		return ;
+	temp = (*a)->next;
+	(*a)->next = *b;
+	*b = *a;
+	*a = temp;
+	if (p == PRINT)
+		ft_printf("pa\n");
 }
 
-int	ft_handle_percent(const char **fmt)
+void	ft_pb(t_list **b, t_list **a, int p)
 {
-	int	len;
+	t_list	*temp;
 
-	len = 0;
-	len = ft_putchar('%');
-		(*fmt)++;
-	return (len);
+	if (!*b)
+		return ;
+	temp = (*b)->next;
+	(*b)->next = *a;
+	*a = *b;
+	*b = temp;
+	if (p == PRINT)
+		ft_printf("pb\n");
 }

@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_mandatory2.c                                :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 16:20:50 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/06/02 00:26:38 by vopekdas         ###   ########.fr       */
+/*   Created: 2023/11/07 11:42:01 by vopekdas          #+#    #+#             */
+/*   Updated: 2024/06/04 04:18:29 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+/* ft_strlen.c: Computes the length of the string `s`. */
 
-int	ft_handle_c(int fmt)
+#include "../includes/libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	int	len;
+	size_t	i;
 
-	len = 0;
-	len = ft_putchar(fmt);
-	return (len);
-}
-
-int	ft_handle_percent(const char **fmt)
-{
-	int	len;
-
-	len = 0;
-	len = ft_putchar('%');
-		(*fmt)++;
-	return (len);
+	i = 0;
+	if (!s)
+		return (print_error_int(STR_NULL_ERROR));
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
 }

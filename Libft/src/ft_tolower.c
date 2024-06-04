@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_mandatory2.c                                :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 16:20:50 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/06/02 00:26:38 by vopekdas         ###   ########.fr       */
+/*   Created: 2023/11/07 11:44:46 by vopekdas          #+#    #+#             */
+/*   Updated: 2024/06/04 04:18:28 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+/* ft_tolower.c: Converts the letter `c` to lower case if possible. */
 
-int	ft_handle_c(int fmt)
+#include "../includes/libft.h"
+
+int	ft_tolower(int c)
 {
-	int	len;
-
-	len = 0;
-	len = ft_putchar(fmt);
-	return (len);
-}
-
-int	ft_handle_percent(const char **fmt)
-{
-	int	len;
-
-	len = 0;
-	len = ft_putchar('%');
-		(*fmt)++;
-	return (len);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	else
+		return (c);
 }

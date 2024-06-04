@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_mandatory2.c                                :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 16:20:50 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/06/02 00:26:38 by vopekdas         ###   ########.fr       */
+/*   Created: 2023/11/07 10:35:36 by vopekdas          #+#    #+#             */
+/*   Updated: 2024/06/04 04:19:46 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+/* ft_lstadd_front.c: Adds a new element at the beginning of the list. */
 
-int	ft_handle_c(int fmt)
+#include "../includes/libft.h"
+
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	int	len;
-
-	len = 0;
-	len = ft_putchar(fmt);
-	return (len);
-}
-
-int	ft_handle_percent(const char **fmt)
-{
-	int	len;
-
-	len = 0;
-	len = ft_putchar('%');
-		(*fmt)++;
-	return (len);
+	if (lst && new)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }

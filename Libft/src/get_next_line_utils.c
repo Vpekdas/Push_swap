@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_mandatory2.c                                :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 16:20:50 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/06/02 00:26:38 by vopekdas         ###   ########.fr       */
+/*   Created: 2023/11/15 14:54:18 by vopekdas          #+#    #+#             */
+/*   Updated: 2024/06/04 05:04:14 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/libft.h"
 
-int	ft_handle_c(int fmt)
+char	*ft_strjoin_and_free(char *s1, char *s2)
 {
-	int	len;
+	char	*ptr;
+	size_t	len;
+	size_t	i;
+	size_t	j;
 
-	len = 0;
-	len = ft_putchar(fmt);
-	return (len);
-}
-
-int	ft_handle_percent(const char **fmt)
-{
-	int	len;
-
-	len = 0;
-	len = ft_putchar('%');
-		(*fmt)++;
-	return (len);
+	if (!s1 || !s2)
+		return (NULL);
+	i = 0;
+	j = 0;
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	ptr = malloc(len);
+	if (!ptr)
+		return (NULL);
+	while (s1[i])
+	{
+		ptr[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+		ptr[i++] = s2[j++];
+	ptr[i] = '\0';
+	free(s1);
+	return (ptr);
 }

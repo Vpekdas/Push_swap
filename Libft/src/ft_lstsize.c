@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_mandatory2.c                                :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 16:20:50 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/06/02 00:26:38 by vopekdas         ###   ########.fr       */
+/*   Created: 2023/11/07 10:38:40 by vopekdas          #+#    #+#             */
+/*   Updated: 2024/06/04 04:21:13 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+/* ft_lstsize.c: Counts the number of elements in a list. */
 
-int	ft_handle_c(int fmt)
+#include "../includes/libft.h"
+
+int	ft_lstsize(t_list *lst)
 {
-	int	len;
+	int		i;
+	t_list	*current;
 
-	len = 0;
-	len = ft_putchar(fmt);
-	return (len);
-}
-
-int	ft_handle_percent(const char **fmt)
-{
-	int	len;
-
-	len = 0;
-	len = ft_putchar('%');
-		(*fmt)++;
-	return (len);
+	if (!lst)
+		return (0);
+	i = 0;
+	current = lst;
+	while (current)
+	{
+		i++;
+		current = current->next;
+	}
+	return (i);
 }

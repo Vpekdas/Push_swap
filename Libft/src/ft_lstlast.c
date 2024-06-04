@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_mandatory2.c                                :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 16:20:50 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/06/02 00:26:38 by vopekdas         ###   ########.fr       */
+/*   Created: 2023/11/07 10:37:05 by vopekdas          #+#    #+#             */
+/*   Updated: 2024/06/04 04:20:37 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+/* ft_lstlast.c: Returns the last element of the list. */
 
-int	ft_handle_c(int fmt)
+#include "../includes/libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	len;
+	t_list	*current;
+	t_list	*previous;
 
-	len = 0;
-	len = ft_putchar(fmt);
-	return (len);
-}
-
-int	ft_handle_percent(const char **fmt)
-{
-	int	len;
-
-	len = 0;
-	len = ft_putchar('%');
-		(*fmt)++;
-	return (len);
+	if (!lst)
+		return (NULL);
+	current = lst;
+	while (current)
+	{
+		previous = current;
+		current = current->next;
+	}
+	return (previous);
 }

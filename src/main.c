@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_mandatory2.c                                :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 16:20:50 by vopekdas          #+#    #+#             */
-/*   Updated: 2024/06/02 00:26:38 by vopekdas         ###   ########.fr       */
+/*   Created: 2024/01/04 15:14:10 by vopekdas          #+#    #+#             */
+/*   Updated: 2024/06/04 04:35:48 by vopekdas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/push_swap.h"
 
-int	ft_handle_c(int fmt)
+int	main(int ac, char **av)
 {
-	int	len;
+	t_list	*a;
+	t_list	*b;
 
-	len = 0;
-	len = ft_putchar(fmt);
-	return (len);
-}
-
-int	ft_handle_percent(const char **fmt)
-{
-	int	len;
-
-	len = 0;
-	len = ft_putchar('%');
-		(*fmt)++;
-	return (len);
+	b = NULL;
+	if (ac < 2)
+		return (0);
+	else if (ac == 2)
+		a = ft_linked_list_if_ac_2(av);
+	else if (ac > 2)
+	{
+		if (ft_overall_check(ac, av) == 1)
+			return (ft_print_error());
+		a = ft_linked_list(ac, av);
+	}
+	ft_select_and_apply_sort(&a, &b);
+	return (ft_free_list(&a, &b));
 }
