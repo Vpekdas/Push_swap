@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 04:26:45 by vopekdas          #+#    #+#              #
-#    Updated: 2024/06/04 05:21:40 by vopekdas         ###   ########.fr        #
+#    Updated: 2024/06/05 01:23:50 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -235,7 +235,7 @@ clean:
 
 fclean: clean
 	@printf "$(PURPLE)"
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) $(NAME_BONUS)
 	@echo "[🚮] $(BRED)All $(RED)files have been cleaned ✔️$(NC)\n"
 
 re: clean all
