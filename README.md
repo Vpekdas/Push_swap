@@ -477,7 +477,7 @@ Plans for future development include adding more functions, improving performanc
 
 ### Known Issues
 
-There are currently no known issues. If you find a bug, please report it in the [issue tracker](https://github.com/Vpekdas/libft/issues).
+There are currently no known issues. If you find a bug, please report it in the [issue tracker](https://github.com/Vpekdas/push_swap/issues).
 
 ### Contributing
 
