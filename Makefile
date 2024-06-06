@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 04:26:45 by vopekdas          #+#    #+#              #
-#    Updated: 2024/06/05 01:23:50 by vopekdas         ###   ########.fr        #
+#    Updated: 2024/06/06 02:07:14 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -231,7 +231,7 @@ clean:
 	@$(RM) $(OBJS) obj
 	@cd $(LIBFT_PATH) && make clean
 	@cd $(FT_PRINTF_PATH) && make clean
-	@echo "[🧼] $(BYELLOW)Objects $(YELLOW)files have been cleaned from $(PROJECT_NAME) ✔️$(NC)\n"
+	@echo "[🧼] $(BYELLOW)Objects $(YELLOW)files have been cleaned from $(PROJECT_NAME), $(LIBFT_PATH) and $(FT_PRINTF_PATH) ✔️$(NC)\n"
 
 fclean: clean
 	@printf "$(PURPLE)"

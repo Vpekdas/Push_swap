@@ -6,7 +6,7 @@
 #    By: vopekdas <vopekdas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 00:41:08 by inf1n1ty          #+#    #+#              #
-#    Updated: 2024/06/04 04:25:34 by vopekdas         ###   ########.fr        #
+#    Updated: 2024/06/06 02:06:36 by vopekdas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -242,12 +242,10 @@ $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
 clean:
 	@printf "$(PURPLE)"
 	@$(RM) $(OBJS) obj
-	@echo "[🧼] $(BYELLOW)Objects $(YELLOW)files have been cleaned from $(PROJECT_NAME) ✔️$(NC)\n"
 
 fclean: clean
 	@printf "$(PURPLE)"
 	@$(RM) $(NAME)
-	@echo "[🚮] $(BRED)All $(RED)files have been cleaned ✔️$(NC)\n"
 
 re: clean all
 
