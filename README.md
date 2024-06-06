@@ -44,7 +44,7 @@ git clone https://github.com/Vpekdas/push_swap.git
 
 2 - Compile the project: Navigate to the cloned repository and compile the project using the provided Makefile. Run the following command in your terminal:
 ```bash
-make
+make && make bonus
 ```
 This will create two executables: push_swap and checker.
 
