@@ -465,7 +465,25 @@ If you have any questions, issues, or if you want to contribute, feel free to re
 
 ## Project Development
 
-This project started as a simple tool for personal use and is evolving into a full-fledged library. While it has been a solo endeavor so far, contributions from the community are welcome and appreciated.
+### Development Process
+
+The development of the "push_swap" project began with understanding how linked lists work and what the instructions do. I then watched several tutorials on blogs about the "push_swap" algorithm. 
+
+### Challenges and Solutions
+
+The main challenge was understanding how a human can sort numbers using these instructions and then finding a way to explain this process to a computer. After watching many tutorials, I noticed a common methodology: they all used functions to determine where a number should go and where it currently is. This insight helped me save time and understand the problem better.
+
+### Tools and Technologies Used
+
+The "push_swap" project was developed using C.
+
+### Lessons Learned
+
+The development of "push_swap" taught me how to guide a computer to make optimized choices. Essentially, we need to present the computer with various scenarios and their outcomes, then instruct it to remember only the scenario that requires the fewest moves.
+
+### Future Plans
+
+There are currently no plans to further improve the "push_swap" algorithm. The experience gained from this project has been invaluable and will be applied to future projects.
 
 ### Current Status
 
