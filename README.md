@@ -17,8 +17,6 @@ As part of the 42 curriculum, this project comes with strict coding guidelines:
 - A strict rule of 5 functions per file and 25 lines per function is enforced.
 - There are restrictions such as no assignments on the same line and a focus on clean, maintainable code.
 
-This project provides hands-on experience with low-level graphical programming and reinforces good coding practices under challenging constraints.
-
 ### Purpose
 
 The goal of this program is to sort numbers using specific instructions. The program will output the sequence of instructions required to sort the given list of numbers.
